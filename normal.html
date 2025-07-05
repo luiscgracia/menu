@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>RESTAURANTE</title>
+<meta name="description" content="RESTAURANTE" />
+<meta name="Resource-type" content="Document" />
+<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+<link rel="stylesheet" type="text/css" href="css/estilos.css" />
+<style>
+	@font-face {font-family:"Arlrdlt"; font-style:normal;font-weight:normal;src:local("?"), url(fuentes/Arlrdlt.woff) format("woff"), url(fuentes/Arlrdlt.ttf) format("truetype");}
+	@font-face {font-family:"Arlrdbd"; font-style:normal;font-weight:bold;src:local("?"), url(fuentes/Arlrdbd.woff) format("woff"), url(fuentes/Arlrdbd.ttf) format("truetype");}
+	@font-face {font-family:"urw";font-style:normal;font-weight:normal;src:local("?"), url(fuentes/urw.woff) format("woff"), url(fuentes/urw.ttf) format("truetype");}
+	/* Sections
+	 * --------------------------------------- */
+	#section0 img,
+	#section1 img{margin:0px 0 0 0;}
+	#section2 img{margin:0px 0 0 0;}
+	#section3 img{bottom:0px; position:absolute; margin-left:-420px;}
+	.intro p{width:50%; margin:0 auto; font-size:1.5em;}
+	.twitter-share-button{position:absolute; z-index:99; right:149px; top:9px;}
+	/* Fixed header and footer.
+	* --------------------------------------- */
+	#header	{position:fixed;height:0%;display:block;width:100%;background:rgba(194,251, 21,1);z-index:9;text-align:center;color:rgba( 55, 55, 55,1);
+		 padding:0 0 0 0;top:0px;   font-family:Arlrdbd;font-size:36px}
+	#footer	{position:fixed;height:5%;display:block;width:100%;background:rgba(194,251, 21,1);z-index:9;text-align:center;vertical-align:bottom; color:rgba( 55, 55, 55,1);
+		 padding:0 0 0 0;bottom:0px;font-family:Arlrdbd;font-size:40px}
+	ul li	{padding:20px;margin:0px;width:27%;height:100px;text-align:center;vertical-align:middle;font-family:Arlrdbd;font-size:28px} /* tamaño horizontal y fuente botones menu */
+	iframe	{border:0px green solid;}
+/* verde fluorescente: rgba(194,251,21,1) */
+	#fotos	{-moz-transform: rotate(-0deg);
+		 -o-transform: rotate(-0deg);
+		 -webkit-transform: rotate(-0deg);
+		 transform: rotate(-0deg);}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.fullPage.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#fullpage').fullpage({
+			/* sectionsColor:['rgba(243,197,103,1)','rgba(240,186,78,1)','rgba(245,197,23,1)','rgba(236,175,58,1)','rgba(229,155,6,1)'], */
+			sectionsColor:['rgba(80,80,80,1)','rgba(100,100,100,1)','rgba(120,120,120,1)','rgba(140,140,140,1)','rgba(160,160,160,1)'],
+			anchors:['1a','2a','3a','4a','5a','ultima'],
+			menu:'#menu',
+
+			/* si quiero desplazamientos manuales, sin indicador lateral derecho */
+			/* loopTop:true,
+			loopBottom:true,
+			scrollingSpeed:1000, */
+
+			/* si quiero desplazamientos manuales y continuos, con indicador lateral derecho */
+			scrollingSpeed:1000,
+			navigation:true,
+			continuousVertical:true,
+
+			/* si quiero desplazamiento infinito mostrando cada diapositiva 1500 milisegundos */
+			/* navigation:true,
+			continuousVertical:true,
+			afterRender: function(){
+				setInterval(function(){
+					$.fn.fullpage.moveSectionDown();
+				}, 1500);
+			} */
+
+		});
+	});
+</script>
+</head>
+<body>
+<div id="header"></div>
+<div id="footer">
+  <table style="width:100%;height:100%">
+    <tr>
+      <td style="height:100%">
+		<marquee scrolldelay="2700" scrollamount="400">
+		  <font color="black"><b>RESTAURANTE</b></font>
+		</marquee>
+      </td>
+    </tr>
+  </table>
+</div>
+<div align="center">
+<ul id="menu">
+	<li data-menuanchor="1a"><a href="#1a">INICIO</a></li>
+	<li data-menuanchor="2a"><a href="#2a">MENÚ</a></li>
+	<li data-menuanchor="3a"><a href="#3a">CONTACTO</a></li>
+</ul>
+</div>
+<div id="fullpage">
+	<!-- sección INICIO -->
+	<div class="section" id="section0">
+	  <div class="slide" style="font-size:60px; font-weight:bold; color:rgba(194,251,21,1)">
+		<div class="intro" id="fotos">NUESTRA OFERTA<br>GASTRONÓMICA<br><br>CARNES<br><br>POLLO<br><br>PESCADO</div>
+	  </div>
+	  <div class="slide"><div class="intro" id="fotos"><img src="imgs/normal/1.1.svg" style="width:auto; heigt:100%"></div></div>
+	  <div class="slide"><div class="intro" id="fotos"><img src="imgs/normal/1.2.svg" style="width:auto; heigt:100%"></div></div>
+	  <div class="slide"><div class="intro" id="fotos"><img src="imgs/normal/1.3.svg" style="width:auto; heigt:100%"></div></div>
+	  <div class="slide"><div class="intro" id="fotos"><img src="imgs/normal/1.4.svg" style="width:auto; heigt:100%"></div></div>
+	  <div class="slide"><div class="intro" id="fotos"><img src="imgs/normal/1.5.svg" style="width:auto; heigt:100%"></div></div>
+	</div>
+
+	<!-- sección FOTOS -->
+	<div class="section" id="section1">
+	  <div class="slide"><div class="intro" id="fotos"><img src="imgs/normal/2.1.svg" style="width:auto; heigt:100%"></div></div>
+	  <div class="slide"><div class="intro" id="fotos"><img src="imgs/normal/2.2.svg" style="width:auto; heigt:100%"></div></div>
+	  <div class="slide"><div class="intro" id="fotos"><img src="imgs/normal/2.3.svg" style="width:auto; heigt:100%"></div></div>
+	  <div class="slide"><div class="intro" id="fotos"><img src="imgs/normal/2.4.svg" style="width:auto; heigt:100%"></div></div>
+	  <div class="slide"><div class="intro" id="fotos"><img src="imgs/normal/2.5.svg" style="width:auto; heigt:100%"></div></div>
+	</div>
+
+	<!-- sección CONTACTO -->
+	<div class="section" id="section2">
+	  <div class="slide" style="font-size:60px; font-weight:bold; color:rgba(194,251,21,1)">
+		<div class="intro" id="fotos">RESTAURANTE<br><br>Bulevar Niza<br>Local 3-115<br>Av. Carrera 58 # 127-59<br><br>315 123 4567<br><br>correo@correo.com</div>
+	  </div>
+	  <div class="slide"><div class="intro" id="fotos"><img src="imgs/normal/3.1.svg" style="width:auto; heigt:100%"></div></div>
+	  <div class="slide"><div class="intro" id="fotos"><img src="imgs/normal/3.2.svg" style="width:auto; heigt:100%"></div></div>
+	  <div class="slide"><div class="intro" id="fotos"><img src="imgs/normal/3.3.svg" style="width:auto; heigt:100%"></div></div>
+	  <div class="slide"><div class="intro" id="fotos"><img src="imgs/normal/3.4.svg" style="width:auto; heigt:100%"></div></div>
+	  <div class="slide"><div class="intro" id="fotos"><img src="imgs/normal/3.5.svg" style="width:auto; heigt:100%"></div></div>
+	</div>
+</div>
+</body>
+</html>
+
