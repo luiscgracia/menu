@@ -1,0 +1,34 @@
+/* color de fondo de la ventana */
+* {margin:0;padding:0;background:rgba(256,0,0,0);}
+
+/* color de fondo de los lados de las fotos */
+body {background:rgba(0,256,0,0);vertical-align:bottom;}
+
+/* define el tamaño máximo de la ventana del slide */
+.main {max-width:100px;margin:0px auto;}
+
+/*ancho de la ventana de las fotos */
+.slides {height:auto; width:100%;}
+
+/* color de fondo de las fotos, se ve si es mas pequeña o hay transparencias,
+	con height:auto, SI se proporcionan las fotos del slide (NO se llena todo el espacio disponible)
+	con height:100%, NO se proporcionan las fotos del slide (SI se llena todo el espacio disponible) */
+.slides img {height:auto;background:rgba(240,240,240,0);}
+
+/* union de los menus de numeros e iniciar */
+.slidesjs-pagination {background:rgba(128,128,128,0);font-family:Arlrdbd;font-weight:bold;font-size:15px;list-style:none;overflow:hidden;}
+
+/* el numero de botones es el inverso de el ancho */
+.slidesjs-pagination li {float:left;width:8.33%;}
+
+/* color de la fuente del menu numeros */
+.slidesjs-pagination li a {display:block;padding:6px 0px;text-decoration:none;color:rgb(0,0,0);}
+
+/* menu numeros (cuando me paro en el numero de alguna foto, sin dar click) */
+.slidesjs-pagination li a:hover {background:rgb(0,0,0);color:rgb(128,128,128);}
+
+/* menu numeros (indica la foto actual) */
+.slides .active {font-family:Arlrdbd;font-size:15px;background:rgb(0,0,0);color:rgb(128,128,128);}
+
+/* menu siguiente, anterior, iniciar (fotografías >= 13, aumentar padding en 14px) */
+.slidesjs-navigation {font-family:Btnswtch;font-size:14px;background:rgb(0,0,0);color:rgb(128,128,128);text-decoration:none;display:inline-block;padding:6px 0px;float:right;width:8.5%;height:16px;}
