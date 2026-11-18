@@ -1,4 +1,4 @@
-<!-- proporción imágenes debe ser 1:1.84 en celulares -->
+<!-- proporción imágenes debe ser 1:1.84 en celulares. Para añadir más secciones, basta con crear imgs/mobile/6.1.svg, 7.1.svg, etc. Las secciones se generan automáticamente. -->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -36,11 +36,7 @@ body {
 @font-face {font-family:"Arlrdlt"; font-style:normal; font-weight:normal; src:local("?"), url(fuentes/Arlrdlt.woff) format("woff"), url(fuentes/Arlrdlt.ttf) format("truetype");}
 @font-face {font-family:"Arlrdbd"; font-style:normal; font-weight:bold; src:local("?"), url(fuentes/Arlrdbd.woff) format("woff"), url(fuentes/Arlrdbd.ttf) format("truetype");}
 #section0 img{margin:0 0 0 0;}
-#section1 img{margin:0 0 0 0;}
-#section2 img{margin:0 0 0 0;}
-#section3 img{margin:0 0 0 0;}
-#section4 img{margin:0 0 0 0;}
-#section5 img{margin:0 0 0 0;}
+.contenido-extra img{margin:0 0 0 0;}
 .intro p{width:50%; margin:0 auto; font-size:1.5em;}
 
 #fullpage { height: 100svh; }
@@ -52,17 +48,18 @@ body {
 .pantalla .fotomenu img	{position:absolute; top:0; left:0; width:100%; height:100%; object-fit:contain; object-position:center center}
 .portada	{position:relative; overflow:hidden}
 .portada img {position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; object-position:center center}
-#section1, #section2, #section3, #section4,
-#section1 .fp-slides, #section2 .fp-slides, #section3 .fp-slides, #section4 .fp-slides,
-#section1 .fp-slidesContainer, #section2 .fp-slidesContainer, #section3 .fp-slidesContainer, #section4 .fp-slidesContainer,
-#section1 .fp-slide, #section2 .fp-slide, #section3 .fp-slide, #section4 .fp-slide,
-#section1 .fp-tableCell, #section2 .fp-tableCell, #section3 .fp-tableCell, #section4 .fp-tableCell	{background-color:#f8f0e6 !important}
+/* Contenedor de referencia para los títulos en las slides de la intro */
+.slide#fotos {position:relative}
+.contenido-extra, .contenido-extra .fp-slides, .contenido-extra .fp-slidesContainer,
+.contenido-extra .fp-slide, .contenido-extra .fp-tableCell	{background-color:#f8f0e6 !important}
 html.fp-enabled, .fp-enabled body	{background-color:#f8f0e6}
 ul li	{padding:10px 0px 0px 0px; margin:0px; width:32.95%; height:10%; background:rgba(0,0,255,0)}
 #fotos	{-moz-transform: rotate(-0deg); -o-transform: rotate(-0deg); -webkit-transform: rotate(-0deg); transform: rotate(-0deg)}
-h2, h5 {position:fixed; font-size:28px; color:rgba(230,176,61,1); border-radius:20px}
-h2 {width: 85%; height: 3%; top:60%; left:5%; background-color:rgba(79,53,40,1.00); padding:5% 2.5% 5% 2.5%; font-size:28px}
-h5 {width: 85%;                      left:5%; background-color:rgba(79,53,40,0.85); padding:2% 2.5% 2% 2.5%; font-size:21px}
+/* Idéntico al original; solo cambiado fixed -> absolute para que cada título
+   se mueva con su propia diapositiva en fullPage (con fixed se superponían). */
+h2, h5 {position:absolute; font-size:24px; color:rgba(230,176,61,1); border-radius:20px}
+h2 {width: 64%; height: 3%; left:13%; background-color:rgba(79,53,40,1.00); padding:2.5% 5% 1.25% 5%; top:60%}
+h5 {width: 86%; left: 5%; background-color:rgba(79,53,40,0.85); padding:2.5% 2% 1.25% 2%}
 img {width:100%; height:auto}
 
 /* =========================================
@@ -135,79 +132,366 @@ img {width:100%; height:auto}
 	width: 10px !important;  
 	height: 10px !important;
 }
+
+/* =========================================
+   OVERLAY DE CARGA (mientras se detectan archivos)
+   ========================================= */
+#cargando {
+	position: fixed; inset: 0; z-index: 99999;
+	background: #f8f0e6; color: rgba(79,53,40,1);
+	display: flex; align-items: center; justify-content: center;
+	font-family: Arlrdbd; font-size: 22px;
+	transition: opacity .35s ease;
+}
+#cargando.oculto { opacity: 0; pointer-events: none; }
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
 <script src="js/jquery.fullPage.js"></script>
 <script>
-function iniciarMenu() {
+function iniciarMenu(totalSecciones) {
+	var colors = [];
+	for (var i = 0; i < totalSecciones; i++) {
+		if (i === 0) colors.push('rgba(79,53,40,0.6)');
+		else if (i === totalSecciones - 1) colors.push('rgba(79,53,40,1.0)');
+		else colors.push('#f8f0e6');
+	}
+	var anchors = [];
+	for (var j = 0; j < totalSecciones; j++) anchors.push((j + 1) + 'a');
+
 	$('#fullpage').fullpage({
-		sectionsColor:['rgba(79,53,40,0.6)', '#f8f0e6', '#f8f0e6', '#f8f0e6', '#f8f0e6', 'rgba(79,53,40,1.0)'],
-		anchors:['1a','2a','3a','4a','5a','6a'],
-		menu:'#menu',
-		scrollingSpeed:500,
-		navigation:true,
-		continuousVertical:true,
-		fitToSection:false
+		sectionsColor: colors,
+		anchors: anchors,
+		scrollingSpeed: 500,
+		navigation: true,
+		continuousVertical: true,
+		fitToSection: false
 	});
 }
 
-var SECCIONES = [1,2,3,4,5];
-var MAX_SLIDES = 40;
+/* =====================================================================
+   NOMBRES DE LAS SECCIONES (HARDCODEADOS)
+   ---------------------------------------------------------------------
+   La POSICIÓN en esta lista indica el número de archivo:
+     posición 1  ->  imgs/mobile/1.x.svg
+     posición 2  ->  imgs/mobile/2.x.svg
+     ...
+   Para añadir una sección, solo agrega su nombre al final de la lista.
+   Si existe N.1.svg pero N no está en la lista, se usa "SECCIÓN N".
+   ===================================================================== */
+var NOMBRES = [
+	'BEBIDAS',            // 1.x.svg
+	'ALMUERZO / CENA',    // 2.x.svg
+	'DESAYUNO / BRUNCH',  // 3.x.svg
+	'HELADOS / POSTRES',  // 4.x.svg
+	'OTROS',              // 5.x.svg
+	'PRUEBA'              // 6.x.svg
+];
 
+var MAX_SLIDES    = 40;
+var MAX_SECCIONES = Math.max(NOMBRES.length + 5, 8);
+
+/* ---------------------------------------------------------------------
+   CACHÉ PERSISTENTE (localStorage)
+   ---------------------------------------------------------------------
+   • Al AÑADIR SECCIONES nuevas (7.x.svg…) sube CACHE_KEY (v3, v4…).
+     No hace falta tocar sw.js.
+   • Al EDITAR un archivo ya existente (2.3.svg, header.svg, fuentes…)
+     sube VERSION en sw.js. No hace falta tocar CACHE_KEY.
+   • CACHE_TTL es solo una red de seguridad por si olvidas lo anterior.
+     Con 12 h, cualquier archivo nuevo aparece como máximo ese plazo
+     después, aunque no bumpees nada. Si prefieres que nunca caduque
+     solo, ponlo en Infinity y comprométete a bumpear CACHE_KEY.
+   --------------------------------------------------------------------- */
+var CACHE_KEY = 'menu-mobile-v2';
+var CACHE_TTL = 12 * 60 * 60 * 1000;  // 12 horas
+
+function getCache() {
+	try {
+		var raw = localStorage.getItem(CACHE_KEY);
+		if (!raw) return null;
+		var d = JSON.parse(raw);
+		if (!d || d.v !== 2 || !Array.isArray(d.secciones)) return null;
+		if (Date.now() - (d.ts || 0) > CACHE_TTL) return null;
+		return d;
+	} catch (e) { return null; }
+}
+
+function setCache(data) {
+	try {
+		data.v = 2;
+		data.ts = Date.now();
+		localStorage.setItem(CACHE_KEY, JSON.stringify(data));
+	} catch (e) {}
+}
+
+/* --- Concurrencia controlada --- */
+function pMap(items, fn, concurrency) {
+	return new Promise(function(resolve) {
+		var results = new Array(items.length);
+		var idx = 0, active = 0, done = 0;
+		if (!items.length) return resolve(results);
+		function next() {
+			while (active < concurrency && idx < items.length) {
+				(function(i) {
+					active++;
+					Promise.resolve(fn(items[i], i)).then(function(r) {
+						results[i] = r;
+					}, function() {
+						results[i] = null;
+					}).then(function() {
+						active--; done++;
+						if (done === items.length) resolve(results);
+						else next();
+					});
+				})(idx++);
+			}
+		}
+		next();
+	});
+}
+
+/* --- Detección de existencia: HEAD como ruta rápida, Image como respaldo --- */
 function existe(src) {
 	return new Promise(function(ok) {
-		if (location.protocol.indexOf('http') === 0 && window.fetch) {
-			fetch(src, {method:'HEAD', cache:'no-cache'}).then(function(r) {
-				var t = r.headers.get('content-type') || '';
-				ok(r.ok && (t === '' || t.indexOf('image') === 0));
-			}).catch(function() { ok(false); });
-		} else {
+		var terminado = false;
+		function fin(v) { if (!terminado) { terminado = true; clearTimeout(t); ok(v); } }
+		// Evita que una petición colgada bloquee la detección completa
+		var t = setTimeout(function() { fin(false); }, 4000);
+
+		function porImagen() {
 			var i = new Image();
-			i.onload = function() { ok(true); };
-			i.onerror = function() { ok(false); };
+			i.onload  = function() { fin(true);  };
+			i.onerror = function() { fin(false); };
 			i.src = src;
 		}
+		if (location.protocol.indexOf('http') === 0 && window.fetch) {
+			fetch(src, {method: 'HEAD', cache: 'no-cache'})
+				.then(function(r) {
+					if (!r.ok) return fin(false);
+					var ct = (r.headers.get('content-type') || '').toLowerCase();
+					if (ct === '' || ct.indexOf('image') === 0 || ct.indexOf('svg') !== -1 || ct.indexOf('xml') !== -1) {
+						fin(true);
+					} else {
+						porImagen();
+					}
+				})
+				.catch(porImagen);
+		} else {
+			porImagen();
+		}
+	});
+}
+
+function detectarSecciones() {
+	var lista = [];
+	for (var i = 1; i <= MAX_SECCIONES; i++) lista.push(i);
+	return pMap(lista, function(sec) {
+		return existe('imgs/mobile/' + sec + '.1.svg').then(function(hay) {
+			return hay ? sec : null;
+		});
+	}, 6).then(function(res) {
+		return res.filter(function(s) { return s !== null; });
 	});
 }
 
 function archivosDe(sec) {
 	var lista = [];
-	function siguiente(k) {
-		if (k > MAX_SLIDES) return Promise.resolve(lista);
-		var src = 'imgs/mobile/' + sec + '.' + k + '.svg';
-		return existe(src).then(function(hay) {
-			if (!hay) return lista;
-			lista.push(src);
-			return siguiente(k + 1);
-		});
-	}
-	return siguiente(1);
+	return new Promise(function(resolve) {
+		var k = 1;
+		function ronda() {
+			if (k > MAX_SLIDES) return resolve(lista);
+			var lote = [];
+			for (var j = 0; j < 4 && k + j <= MAX_SLIDES; j++) {
+				lote.push({ n: k + j, src: 'imgs/mobile/' + sec + '.' + (k + j) + '.svg' });
+			}
+			Promise.all(lote.map(function(p) {
+				return existe(p.src).then(function(hay) { return hay ? p : null; });
+			})).then(function(res) {
+				for (var m = 0; m < res.length; m++) {
+					if (res[m] === null) return resolve(lista);
+					lista.push(res[m].src);
+				}
+				k += lote.length;
+				ronda();
+			});
+		}
+		ronda();
+	});
 }
 
-function slideHtml(src) {
+/* ---------------------------------------------------------------------
+   Detección completa con GUARD anti-truncado:
+   si una detección en background falla a medias (red intermitente),
+   puede devolver menos secciones o menos slides de las reales. Para
+   no pisar la caché buena con una lista truncada, comparamos con la
+   anterior y, si la nueva es "peor", conservamos la anterior.
+   --------------------------------------------------------------------- */
+function detectarCompleto() {
+	var previa = getCache();
+
+	return detectarSecciones().then(function(secs) {
+		return pMap(secs, function(sec) {
+			return archivosDe(sec).then(function(slides) {
+				return { sec: sec, slides: slides };
+			});
+		}, 3);
+	}).then(function(partes) {
+		var nueva = { v: 2, ts: Date.now(), secciones: partes };
+
+		// Sin caché previa: aceptar sin más
+		if (!previa || !previa.secciones || !previa.secciones.length) return nueva;
+
+		// Comparar "riqueza" de la lista: nº de secciones y total de slides
+		var prevSecs = previa.secciones.length;
+		var newSecs  = partes.length;
+		var prevSlides = 0, newSlides = 0;
+		previa.secciones.forEach(function(p) { prevSlides += (p.slides ? p.slides.length : 0); });
+		partes.forEach(function(p) { newSlides += (p.slides ? p.slides.length : 0); });
+
+		// Si la nueva lista tiene menos secciones que la previa,
+		// asumimos fallo de red y NO pisamos la caché.
+		if (newSecs < prevSecs) {
+			previa.ts = Date.now();
+			setCache(previa);
+			return previa;
+		}
+
+		// Mismas secciones pero menos slides en total: posible truncamiento.
+		// Conservamos slide a slide lo que ya teníamos, por si acaso.
+		if (newSecs === prevSecs && newSlides < prevSlides) {
+			var porSec = {};
+			previa.secciones.forEach(function(p) { porSec[p.sec] = p; });
+			partes = partes.map(function(p) {
+				var old = porSec[p.sec];
+				if (old && old.slides && p.slides && p.slides.length < old.slides.length) {
+					return old;
+				}
+				return p;
+			});
+			nueva = { v: 2, ts: Date.now(), secciones: partes };
+		}
+
+		return nueva;
+	});
+}
+
+/* --- Orquestador: cache-first, refresh en segundo plano --- */
+function detectarMenu() {
+	var cached = getCache();
+
+	if (cached) {
+		// Refresco silencioso en segundo plano
+		if (navigator.onLine !== false) {
+			setTimeout(function() {
+				detectarCompleto().then(setCache).catch(function() {});
+			}, 500);
+		}
+		return Promise.resolve(cached);
+	}
+
+	// Sin caché y sin red: primera visita debe ser online
+	if (navigator.onLine === false) {
+		return Promise.resolve({ v: 2, ts: Date.now(), secciones: [] });
+	}
+
+	// Primera visita: detección completa bloqueante
+	return detectarCompleto().then(function(data) {
+		setCache(data);
+		return data;
+	});
+}
+
+/* --- Enviar lista de URLs al service worker para que las precachee --- */
+function precacheEnSW(data) {
+	if (!('serviceWorker' in navigator) || !data || !data.secciones) return;
+	var urls = [];
+	data.secciones.forEach(function(p) {
+		urls.push('imgs/mobile/' + p.sec + '.1.svg');
+		p.slides.forEach(function(s) {
+			if (urls.indexOf(s) === -1) urls.push(s);
+		});
+	});
+	if (!urls.length) return;
+	navigator.serviceWorker.ready.then(function(reg) {
+		var sw = reg.active;
+		if (sw) sw.postMessage({ type: 'precache', urls: urls });
+	}).catch(function() {});
+}
+
+function preloadPrimerasSlides(data) {
+	if (!data || !data.secciones) return;
+	data.secciones.forEach(function(p) {
+		var l = document.createElement('link');
+		l.rel = 'preload';
+		l.as = 'image';
+		l.href = 'imgs/mobile/' + p.sec + '.1.svg';
+		document.head.appendChild(l);
+	});
+}
+
+function slideHtml(src, esPrimero) {
+	var loadMode  = esPrimero ? 'eager' : 'lazy';
+	var fetchPrio = esPrimero ? 'high'  : 'low';
 	return '<div class="slide"><div class="pantalla">'
 		+ '<img class="header" src="imgs/mobile/header.svg" alt="">'
-		+ '<div class="fotomenu"><img src="' + src + '" alt=""></div>'
+		+ '<div class="fotomenu"><img src="' + src + '" alt="" '
+		+ 'loading="' + loadMode + '" decoding="async" fetchpriority="' + fetchPrio + '" '
+		+ 'width="1080" height="1987"></div>'
 		+ '<img class="footer" src="imgs/mobile/footer.svg" alt="">'
 		+ '</div></div>';
 }
 
-$(document).ready(function() {
-	Promise.all(SECCIONES.map(archivosDe)).then(function(res) {
-		res.forEach(function(lista, i) {
-			var html = '';
-			lista.forEach(function(src) { html += slideHtml(src); });
-			$('#section' + SECCIONES[i]).append(html);
-		});
-	}).catch(function() {}).then(iniciarMenu);
+function portadaHtml(sec) {
+	var nombre = (NOMBRES[sec - 1] !== undefined) ? NOMBRES[sec - 1] : ('SECCIÓN ' + sec);
+	// Igual que el original: slide con imagen de portada + <h2>
+	return '<div class="slide" id="fotos"><img src="imgs/bebidas.jpg" alt=""><h2>' + nombre + '</h2></div>';
+}
 
-	// Registrar service worker (necesario para que Android ofrezca "Instalar")
-	if ('serviceWorker' in navigator) {navigator.serviceWorker.register('sw.js').catch(function() {});}
+function ocultarCargando() {
+	var el = document.getElementById('cargando');
+	if (el) {
+		el.classList.add('oculto');
+		setTimeout(function() { el.parentNode && el.parentNode.removeChild(el); }, 400);
+	}
+}
+
+$(document).ready(function() {
+	// Registrar SW lo antes posible (no bloquea la detección)
+	if ('serviceWorker' in navigator) {
+		navigator.serviceWorker.register('sw.js').catch(function() {});
+	}
+
+	detectarMenu().then(function(data) {
+		var contacto = $('#fullpage .section').last();
+
+		data.secciones.forEach(function(parte) {
+			var sec = parte.sec;
+			var sec$ = $('<div class="section contenido-extra" id="section' + sec + '">'
+				+ portadaHtml(sec) + '</div>');
+			var slides = '';
+			parte.slides.forEach(function(src, i) {
+				slides += slideHtml(src, i === 0);
+			});
+			sec$.append(slides).insertBefore(contacto);
+		});
+
+		// Reservar descarga de la 1ª imagen de cada sección
+		preloadPrimerasSlides(data);
+
+		iniciarMenu($('#fullpage .section').length);
+		setTimeout(ocultarCargando, 60);
+
+		// Precachear todos los SVG detectados en el service worker
+		precacheEnSW(data);
+	}).catch(function() {
+		iniciarMenu($('#fullpage .section').length);
+		ocultarCargando();
+	});
 });
 </script>
 </head>
 <body>
+<div id="cargando">Cargando menú…</div>
 <div id="fullpage">
   <div class=section id="section0">
 	<div class=slide id="fotos">
@@ -224,22 +508,8 @@ $(document).ready(function() {
 	  <h2 style="top:75%">MENÚ EN LÍNEA</h2>
 	</div>
   </div>
-  <div class=section id="section1">
-	<div class="slide portada" id="fotos"><img src="imgs/bebidas.jpg" alt=""><h2>BEBIDAS</h2></div>
-  </div>
-  <div class=section id="section2">
-	<div class="slide portada" id="fotos"><img src="imgs/bebidas.jpg" alt=""><h2>ALMUERZO / CENA</h2></div>
-  </div>
-  <div class=section id="section3">
-	<div class="slide portada" id="fotos"><img src="imgs/bebidas.jpg" alt=""><h2>DESAYUNO / BRUNCH</h2></div>
-  </div>
-  <div class=section id="section4">
-	<div class="slide portada" id="fotos"><img src="imgs/bebidas.jpg" alt=""><h2>HELADOS / POSTRES</h2></div>
-  </div>
-  <div class=section id="section5">
-	<div class="slide portada" id="fotos"><img src="imgs/otros.jpg" alt=""><h2>OTROS / OTROS</h2></div>
-  </div>
-  <div class=section id="section6" style="font-size:32px; color:black">
+  <!-- Las secciones de menú (1.x.svg, 2.x.svg, ...) se generan aquí automáticamente -->
+  <div class=section id="seccion-contacto" style="font-size:32px; color:black">
 	<div class=slide>RESTAURANTE<br><br>Bulevar Niza<br>Local 3-115<br>Av. Carrera 58 # 127-59</div>
   <div class=slide>CONTACTO<br><br>315 123 4567<br><br>correo@correo.com</div>
 </div>
