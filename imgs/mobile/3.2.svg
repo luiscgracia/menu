@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="1000"
-   height="1832"
-   viewBox="0 0 264.58333 484.71667"
+   width="980"
+   height="1414"
+   viewBox="0 0 259.29166 374.12084"
    version="1.1"
    id="svg5"
-   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
-   sodipodi:docname="2.1.svg"
+   inkscape:version="1.4.3 (0d15f75042, 2025-12-25)"
+   sodipodi:docname="3.2.svg"
    inkscape:export-filename="/opt/lampp/htdocs/webpages/15LS/imgs/1.png"
    inkscape:export-xdpi="300"
    inkscape:export-ydpi="300"
@@ -28,12 +28,12 @@
      inkscape:document-units="px"
      showgrid="false"
      units="px"
-     inkscape:zoom="0.4667031"
-     inkscape:cx="122.13332"
-     inkscape:cy="918.14261"
+     inkscape:zoom="0.66001785"
+     inkscape:cx="424.98851"
+     inkscape:cy="549.22757"
      inkscape:window-width="1920"
-     inkscape:window-height="1048"
-     inkscape:window-x="1366"
+     inkscape:window-height="1047"
+     inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
@@ -43,9 +43,9 @@
      id="defs2">
     <rect
        x="193.06302"
-       y="677.79723"
-       width="7.0924665"
-       height="20.474961"
+       y="677.79724"
+       width="7.0924664"
+       height="20.47496"
        id="rect16896" />
     <g
        id="g4547">
@@ -3484,810 +3484,811 @@
      id="layer1">
     <path
        style="fill:#f8f0e6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
-       d="M 0,484.71665 H 264.58333 V 0 H 0 Z m 0,0"
+       d="M 0,374.12083 H 259.29167 V 0 H 0 Z m 0,0"
        id="path4565-3" />
-    <path
-       style="fill:#f8f0e6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
-       d="M -13.229175,429.94789 H -5.1679993e-6 V 62.17708 H -13.229175 Z m 0,0"
-       id="path4565-3-5" />
-    <path
-       style="fill:none;stroke:#d9ae35;stroke-width:0.705556;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1"
-       d="M 6.0226855,67.378569 H 257.39885"
-       id="path4867-6" />
-    <path
-       style="fill:#f8f0e6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.352778"
-       d="M 158.10714,73.159054 H 104.68555 V 62.525968 h 53.42159 z m 0,0"
-       id="path4869-0" />
     <g
-       style="fill:#d99702;fill-opacity:1;stroke-width:1.24038"
-       id="g4879-4"
-       transform="matrix(0.28441747,0,0,0.28440797,-22.189079,-20.961215)">
-      <use
-         xlink:href="#glyph3-1"
-         x="478.95401"
-         y="319.79001"
-         id="use4871-8"
-         width="100%"
-         height="100%"
-         style="stroke-width:1.24038" />
-      <use
-         xlink:href="#glyph3-2"
-         x="501.823"
-         y="319.79001"
-         id="use4873-8"
-         width="100%"
-         height="100%"
-         style="stroke-width:1.24038" />
-      <use
-         xlink:href="#glyph3-3"
-         x="523.315"
-         y="319.79001"
-         id="use4875-8"
-         width="100%"
-         height="100%"
-         style="stroke-width:1.24038" />
-      <use
-         xlink:href="#glyph3-4"
-         x="541.16199"
-         y="319.79001"
-         id="use4877-9"
-         width="100%"
-         height="100%"
-         style="stroke-width:1.24038" />
-    </g>
-    <g
-       style="fill:#d99702;fill-opacity:1;stroke-width:1.24038"
-       id="g4885-7"
-       transform="matrix(0.28441747,0,0,0.28440797,-22.189079,-20.961215)">
-      <use
-         xlink:href="#glyph3-5"
-         x="560.89899"
-         y="319.79001"
-         id="use4881-7"
-         width="100%"
-         height="100%"
-         style="stroke-width:1.24038" />
-      <use
-         xlink:href="#glyph3-6"
-         x="584.22699"
-         y="319.79001"
-         id="use4883-6"
-         width="100%"
-         height="100%"
-         style="stroke-width:1.24038" />
-    </g>
-    <g
-       id="g241699-4"
-       transform="matrix(2.5445294,0,0,2.5444444,-0.16805577,-2.6928704)"
-       style="stroke-width:0.393007">
+       id="g1"
+       transform="matrix(0.98,0,0,0.98,0,-57.306699)"
+       style="stroke-width:1.02041">
+      <path
+         style="fill:none;stroke:#d9ae35;stroke-width:0.719955;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1"
+         d="M 6.0226855,67.378569 H 257.39885"
+         id="path4867-6" />
+      <path
+         style="fill:#f8f0e6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.359978"
+         d="M 158.10714,73.159054 H 104.68555 V 62.525968 h 53.42159 z m 0,0"
+         id="path4869-0" />
+      <g
+         style="fill:#d99702;fill-opacity:1;stroke-width:1.26569"
+         id="g4879-4"
+         transform="matrix(0.28441747,0,0,0.28440797,-22.189079,-20.961215)">
+        <use
+           xlink:href="#glyph3-1"
+           x="478.95401"
+           y="319.79001"
+           id="use4871-8"
+           width="100%"
+           height="100%"
+           style="stroke-width:1.26569" />
+        <use
+           xlink:href="#glyph3-2"
+           x="501.823"
+           y="319.79001"
+           id="use4873-8"
+           width="100%"
+           height="100%"
+           style="stroke-width:1.26569" />
+        <use
+           xlink:href="#glyph3-3"
+           x="523.315"
+           y="319.79001"
+           id="use4875-8"
+           width="100%"
+           height="100%"
+           style="stroke-width:1.26569" />
+        <use
+           xlink:href="#glyph3-4"
+           x="541.16199"
+           y="319.79001"
+           id="use4877-9"
+           width="100%"
+           height="100%"
+           style="stroke-width:1.26569" />
+      </g>
+      <g
+         style="fill:#d99702;fill-opacity:1;stroke-width:1.26569"
+         id="g4885-7"
+         transform="matrix(0.28441747,0,0,0.28440797,-22.189079,-20.961215)">
+        <use
+           xlink:href="#glyph3-5"
+           x="560.89899"
+           y="319.79001"
+           id="use4881-7"
+           width="100%"
+           height="100%"
+           style="stroke-width:1.26569" />
+        <use
+           xlink:href="#glyph3-6"
+           x="584.22699"
+           y="319.79001"
+           id="use4883-6"
+           width="100%"
+           height="100%"
+           style="stroke-width:1.26569" />
+      </g>
+      <g
+         id="g241699-4"
+         transform="matrix(2.5445294,0,0,2.5444444,-0.16805577,-2.6928704)"
+         style="stroke-width:0.401028">
+        <use
+           xlink:href="#image77865"
+           transform="matrix(0.04069716,0,0,0.04652944,62.388742,31.260513)"
+           id="use5989-3"
+           x="0"
+           y="0"
+           width="100%"
+           height="100%"
+           style="stroke-width:1.56028" />
+        <g
+           id="g192439-0"
+           transform="translate(0,7.633282)"
+           style="stroke-width:0.401028">
+          <g
+             id="g43310-3"
+             transform="matrix(2.0348629,0,0,2.0348629,-54.46291,-198.36753)"
+             style="stroke-width:0.197078">
+            <g
+               style="fill:#cf915c;fill-opacity:1;stroke-width:0.621825"
+               id="g5997-0"
+               transform="matrix(0.11180779,0,0,0.11180779,-8.7227868,29.67515)">
+              <use
+                 xlink:href="#glyph11-1"
+                 x="590.86902"
+                 y="978.34998"
+                 id="use5991-9"
+                 width="100%"
+                 height="100%"
+                 style="stroke-width:0.621825" />
+              <use
+                 xlink:href="#glyph11-2"
+                 x="599.74902"
+                 y="978.34998"
+                 id="use5993-2"
+                 width="100%"
+                 height="100%"
+                 style="stroke-width:0.621825" />
+              <use
+                 xlink:href="#glyph11-3"
+                 x="606.87402"
+                 y="978.34998"
+                 id="use5995-5"
+                 width="100%"
+                 height="100%"
+                 style="stroke-width:0.621825" />
+            </g>
+            <g
+               style="fill:#cf915c;fill-opacity:1;stroke-width:0.621825"
+               id="g6001-4"
+               transform="matrix(0.11180779,0,0,0.11180779,-8.7227868,29.67515)">
+              <use
+                 xlink:href="#glyph11-4"
+                 x="613.86249"
+                 y="978.34998"
+                 id="use5999-0"
+                 width="100%"
+                 height="100%"
+                 style="stroke-width:0.621825" />
+            </g>
+            <g
+               style="fill:#cf915c;fill-opacity:1;stroke-width:0.621825"
+               id="g6007-5"
+               transform="matrix(0.11180779,0,0,0.11180779,-8.7227868,29.67515)">
+              <use
+                 xlink:href="#glyph11-5"
+                 x="620.05902"
+                 y="978.34998"
+                 id="use6003-9"
+                 width="100%"
+                 height="100%"
+                 style="stroke-width:0.621825" />
+              <use
+                 xlink:href="#glyph11-6"
+                 x="627.30402"
+                 y="978.34998"
+                 id="use6005-4"
+                 width="100%"
+                 height="100%"
+                 style="stroke-width:0.621825" />
+            </g>
+            <g
+               style="fill:#cf915c;fill-opacity:1;stroke-width:0.621825"
+               id="g6013-6"
+               transform="matrix(0.11180779,0,0,0.11180779,-8.7227868,29.67515)">
+              <use
+                 xlink:href="#glyph11-7"
+                 x="633.76898"
+                 y="978.34998"
+                 id="use6009-9"
+                 width="100%"
+                 height="100%"
+                 style="stroke-width:0.621825" />
+              <use
+                 xlink:href="#glyph11-8"
+                 x="636.69397"
+                 y="978.34998"
+                 id="use6011-2"
+                 width="100%"
+                 height="100%"
+                 style="stroke-width:0.621825" />
+            </g>
+            <g
+               style="fill:#cf915c;fill-opacity:1;stroke-width:0.621825"
+               id="g6027-2"
+               transform="matrix(0.11180779,0,0,0.11180779,-8.7227868,29.67515)">
+              <use
+                 xlink:href="#glyph11-5"
+                 x="644.7655"
+                 y="978.34998"
+                 id="use6015-4"
+                 width="100%"
+                 height="100%"
+                 style="stroke-width:0.621825" />
+              <use
+                 xlink:href="#glyph11-6"
+                 x="652.0105"
+                 y="978.34998"
+                 id="use6017-7"
+                 width="100%"
+                 height="100%"
+                 style="stroke-width:0.621825" />
+              <use
+                 xlink:href="#glyph11-9"
+                 x="658.62549"
+                 y="978.34998"
+                 id="use6019-7"
+                 width="100%"
+                 height="100%"
+                 style="stroke-width:0.621825" />
+              <use
+                 xlink:href="#glyph11-10"
+                 x="665.93048"
+                 y="978.34998"
+                 id="use6021-54"
+                 width="100%"
+                 height="100%"
+                 style="stroke-width:0.621825" />
+              <use
+                 xlink:href="#glyph11-11"
+                 x="670.34052"
+                 y="978.34998"
+                 id="use6023-8"
+                 width="100%"
+                 height="100%"
+                 style="stroke-width:0.621825" />
+              <use
+                 xlink:href="#glyph11-12"
+                 x="673.53552"
+                 y="978.34998"
+                 id="use6025-12"
+                 width="100%"
+                 height="100%"
+                 style="stroke-width:0.621825" />
+            </g>
+            <g
+               style="fill:#cf915c;fill-opacity:1;stroke-width:0.621825"
+               id="g6031-8"
+               transform="matrix(0.11180779,0,0,0.11180779,-8.7227868,29.67515)">
+              <use
+                 xlink:href="#glyph11-5"
+                 x="678.08051"
+                 y="978.34998"
+                 id="use6029-9"
+                 width="100%"
+                 height="100%"
+                 style="stroke-width:0.621825" />
+            </g>
+          </g>
+          <path
+             style="fill:none;stroke:#cf915c;stroke-width:0.141473;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1"
+             d="M 84.872289,83.49253 H 104.04729"
+             id="path6033-3" />
+        </g>
+      </g>
       <use
          xlink:href="#image77865"
-         transform="matrix(0.04069716,0,0,0.04652944,62.388742,31.260513)"
-         id="use5989-3"
+         transform="matrix(0.10355512,0,0,0.13507402,0,238.81685)"
+         id="use5989-0-6"
          x="0"
          y="0"
          width="100%"
          height="100%"
-         style="stroke-width:1.52907" />
+         style="stroke-width:1.46074" />
       <g
-         id="g192439-0"
-         transform="translate(0,7.633282)"
-         style="stroke-width:0.393007">
+         id="g241814-8"
+         transform="matrix(2.5445294,0,0,2.5444444,1.0396491e-5,0.8644874)"
+         style="stroke-width:0.401028">
         <g
-           id="g43310-3"
-           transform="matrix(2.0348629,0,0,2.0348629,-54.46291,-198.36753)"
-           style="stroke-width:0.193136">
+           id="g43310-2-0"
+           transform="matrix(2.0348629,0,0,2.0348629,-96.419819,-120.25382)"
+           style="stroke-width:0.197078">
           <g
-             style="fill:#cf915c;fill-opacity:1;stroke-width:0.609388"
-             id="g5997-0"
+             style="fill:#cf915c;fill-opacity:1;stroke-width:0.621825"
+             id="g5997-9-2"
              transform="matrix(0.11180779,0,0,0.11180779,-8.7227868,29.67515)">
             <use
                xlink:href="#glyph11-1"
                x="590.86902"
                y="978.34998"
-               id="use5991-9"
+               id="use5991-0-1"
                width="100%"
                height="100%"
-               style="stroke-width:0.609388" />
+               style="stroke-width:0.621825" />
             <use
                xlink:href="#glyph11-2"
                x="599.74902"
                y="978.34998"
-               id="use5993-2"
+               id="use5993-1-0"
                width="100%"
                height="100%"
-               style="stroke-width:0.609388" />
+               style="stroke-width:0.621825" />
             <use
                xlink:href="#glyph11-3"
                x="606.87402"
                y="978.34998"
-               id="use5995-5"
+               id="use5995-0-5"
                width="100%"
                height="100%"
-               style="stroke-width:0.609388" />
+               style="stroke-width:0.621825" />
           </g>
           <g
-             style="fill:#cf915c;fill-opacity:1;stroke-width:0.609388"
-             id="g6001-4"
+             style="fill:#cf915c;fill-opacity:1;stroke-width:0.621825"
+             id="g6001-8-1"
              transform="matrix(0.11180779,0,0,0.11180779,-8.7227868,29.67515)">
             <use
                xlink:href="#glyph11-4"
                x="613.86249"
                y="978.34998"
-               id="use5999-0"
+               id="use5999-1-1"
                width="100%"
                height="100%"
-               style="stroke-width:0.609388" />
+               style="stroke-width:0.621825" />
           </g>
           <g
-             style="fill:#cf915c;fill-opacity:1;stroke-width:0.609388"
-             id="g6007-5"
+             style="fill:#cf915c;fill-opacity:1;stroke-width:0.621825"
+             id="g6007-6-0"
              transform="matrix(0.11180779,0,0,0.11180779,-8.7227868,29.67515)">
             <use
                xlink:href="#glyph11-5"
                x="620.05902"
                y="978.34998"
-               id="use6003-9"
+               id="use6003-7-8"
                width="100%"
                height="100%"
-               style="stroke-width:0.609388" />
+               style="stroke-width:0.621825" />
             <use
                xlink:href="#glyph11-6"
                x="627.30402"
                y="978.34998"
-               id="use6005-4"
+               id="use6005-8-5"
                width="100%"
                height="100%"
-               style="stroke-width:0.609388" />
+               style="stroke-width:0.621825" />
           </g>
           <g
-             style="fill:#cf915c;fill-opacity:1;stroke-width:0.609388"
-             id="g6013-6"
+             style="fill:#cf915c;fill-opacity:1;stroke-width:0.621825"
+             id="g6013-8-0"
              transform="matrix(0.11180779,0,0,0.11180779,-8.7227868,29.67515)">
             <use
                xlink:href="#glyph11-7"
                x="633.76898"
                y="978.34998"
-               id="use6009-9"
+               id="use6009-2-6"
                width="100%"
                height="100%"
-               style="stroke-width:0.609388" />
+               style="stroke-width:0.621825" />
             <use
                xlink:href="#glyph11-8"
                x="636.69397"
                y="978.34998"
-               id="use6011-2"
+               id="use6011-1-4"
                width="100%"
                height="100%"
-               style="stroke-width:0.609388" />
+               style="stroke-width:0.621825" />
           </g>
           <g
-             style="fill:#cf915c;fill-opacity:1;stroke-width:0.609388"
-             id="g6027-2"
+             style="fill:#cf915c;fill-opacity:1;stroke-width:0.621825"
+             id="g6027-3-6"
              transform="matrix(0.11180779,0,0,0.11180779,-8.7227868,29.67515)">
             <use
                xlink:href="#glyph11-5"
                x="644.7655"
                y="978.34998"
-               id="use6015-4"
+               id="use6015-8-2"
                width="100%"
                height="100%"
-               style="stroke-width:0.609388" />
+               style="stroke-width:0.621825" />
             <use
                xlink:href="#glyph11-6"
                x="652.0105"
                y="978.34998"
-               id="use6017-7"
+               id="use6017-9-5"
                width="100%"
                height="100%"
-               style="stroke-width:0.609388" />
+               style="stroke-width:0.621825" />
             <use
                xlink:href="#glyph11-9"
                x="658.62549"
                y="978.34998"
-               id="use6019-7"
+               id="use6019-3-8"
                width="100%"
                height="100%"
-               style="stroke-width:0.609388" />
+               style="stroke-width:0.621825" />
             <use
                xlink:href="#glyph11-10"
                x="665.93048"
                y="978.34998"
-               id="use6021-54"
+               id="use6021-5-6"
                width="100%"
                height="100%"
-               style="stroke-width:0.609388" />
+               style="stroke-width:0.621825" />
             <use
                xlink:href="#glyph11-11"
                x="670.34052"
                y="978.34998"
-               id="use6023-8"
+               id="use6023-4-2"
                width="100%"
                height="100%"
-               style="stroke-width:0.609388" />
+               style="stroke-width:0.621825" />
             <use
                xlink:href="#glyph11-12"
                x="673.53552"
                y="978.34998"
-               id="use6025-12"
+               id="use6025-1-8"
                width="100%"
                height="100%"
-               style="stroke-width:0.609388" />
+               style="stroke-width:0.621825" />
           </g>
           <g
-             style="fill:#cf915c;fill-opacity:1;stroke-width:0.609388"
-             id="g6031-8"
+             style="fill:#cf915c;fill-opacity:1;stroke-width:0.621825"
+             id="g6031-2-4"
              transform="matrix(0.11180779,0,0,0.11180779,-8.7227868,29.67515)">
             <use
                xlink:href="#glyph11-5"
                x="678.08051"
                y="978.34998"
-               id="use6029-9"
+               id="use6029-2-7"
                width="100%"
                height="100%"
-               style="stroke-width:0.609388" />
+               style="stroke-width:0.621825" />
           </g>
         </g>
         <path
-           style="fill:none;stroke:#cf915c;stroke-width:0.138644;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1"
-           d="M 84.872289,83.49253 H 104.04729"
-           id="path6033-3" />
+           style="fill:none;stroke:#cf915c;stroke-width:0.141473;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1"
+           d="M 0,161.60624 H 19.175001"
+           id="path6033-7-2" />
       </g>
-    </g>
-    <use
-       xlink:href="#image77865"
-       transform="matrix(0.10355512,0,0,0.13507402,0,238.81685)"
-       id="use5989-0-6"
-       x="0"
-       y="0"
-       width="100%"
-       height="100%"
-       style="stroke-width:1.43153" />
-    <g
-       id="g241814-8"
-       transform="matrix(2.5445294,0,0,2.5444444,1.0396491e-5,0.8644874)"
-       style="stroke-width:0.393007">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:4.7139px;line-height:0.95;font-family:sans-serif;white-space:pre;inline-size:58.8474;display:inline;fill:#4f3528;fill-opacity:1;stroke:none;stroke-width:0.106105"
+         x="4.7371435"
+         y="34.615707"
+         id="text86605-8-5"
+         transform="matrix(2.5445303,0,0,2.5444444,-5.5678393,9.4447464)"><tspan
+           x="4.7371435"
+           y="34.615707"
+           id="tspan2"><tspan
+             style="font-family:Arial;-inkscape-font-specification:Arial"
+             id="tspan1">Crepe con huevos revueltos </tspan></tspan><tspan
+           x="4.7371435"
+           y="39.136907"
+           id="tspan4"><tspan
+             style="font-family:Arial;-inkscape-font-specification:Arial"
+             id="tspan3">a la crema sobre un fondo </tspan></tspan><tspan
+           x="4.7371435"
+           y="43.658106"
+           id="tspan6"><tspan
+             style="font-family:Arial;-inkscape-font-specification:Arial"
+             id="tspan5">de salsa de queso.</tspan></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:4.43767px;line-height:0.95;font-family:sans-serif;white-space:pre;inline-size:44.1902;display:inline;fill:#4f3528;fill-opacity:1;stroke:none;stroke-width:0.0834197"
+         x="4.7371435"
+         y="34.615707"
+         id="text86605-8-6-9"
+         transform="matrix(3.2961343,0,0,3.1778047,-9.3748298,-28.449547)"><tspan
+           x="4.7371435"
+           y="34.615707"
+           id="tspan8"><tspan
+             style="font-weight:bold;font-family:Arial;-inkscape-font-specification:'Arial Bold'"
+             id="tspan7">Crepes &amp; Waffles</tspan></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:2.49619px;line-height:0.95;font-family:sans-serif;white-space:pre;inline-size:44.1902;display:inline;fill:#4f3528;fill-opacity:1;stroke:none;stroke-width:0.088899"
+         x="4.7371435"
+         y="34.615707"
+         id="text86605-8-6-5-91"
+         transform="matrix(2.902349,0,0,3.1778047,112.38626,-29.69372)"><tspan
+           x="4.7371435"
+           y="34.615707"
+           id="tspan10"><tspan
+             style="font-weight:bold;font-family:'Arial Rounded MT Bold';-inkscape-font-specification:'Arial Rounded MT Bold,  Bold'"
+             id="tspan9">$ 13.600</tspan></tspan></text>
       <g
-         id="g43310-2-0"
-         transform="matrix(2.0348629,0,0,2.0348629,-96.419819,-120.25382)"
-         style="stroke-width:0.193136">
-        <g
-           style="fill:#cf915c;fill-opacity:1;stroke-width:0.609388"
-           id="g5997-9-2"
-           transform="matrix(0.11180779,0,0,0.11180779,-8.7227868,29.67515)">
-          <use
-             xlink:href="#glyph11-1"
-             x="590.86902"
-             y="978.34998"
-             id="use5991-0-1"
-             width="100%"
-             height="100%"
-             style="stroke-width:0.609388" />
-          <use
-             xlink:href="#glyph11-2"
-             x="599.74902"
-             y="978.34998"
-             id="use5993-1-0"
-             width="100%"
-             height="100%"
-             style="stroke-width:0.609388" />
-          <use
-             xlink:href="#glyph11-3"
-             x="606.87402"
-             y="978.34998"
-             id="use5995-0-5"
-             width="100%"
-             height="100%"
-             style="stroke-width:0.609388" />
-        </g>
-        <g
-           style="fill:#cf915c;fill-opacity:1;stroke-width:0.609388"
-           id="g6001-8-1"
-           transform="matrix(0.11180779,0,0,0.11180779,-8.7227868,29.67515)">
-          <use
-             xlink:href="#glyph11-4"
-             x="613.86249"
-             y="978.34998"
-             id="use5999-1-1"
-             width="100%"
-             height="100%"
-             style="stroke-width:0.609388" />
-        </g>
-        <g
-           style="fill:#cf915c;fill-opacity:1;stroke-width:0.609388"
-           id="g6007-6-0"
-           transform="matrix(0.11180779,0,0,0.11180779,-8.7227868,29.67515)">
-          <use
-             xlink:href="#glyph11-5"
-             x="620.05902"
-             y="978.34998"
-             id="use6003-7-8"
-             width="100%"
-             height="100%"
-             style="stroke-width:0.609388" />
-          <use
-             xlink:href="#glyph11-6"
-             x="627.30402"
-             y="978.34998"
-             id="use6005-8-5"
-             width="100%"
-             height="100%"
-             style="stroke-width:0.609388" />
-        </g>
-        <g
-           style="fill:#cf915c;fill-opacity:1;stroke-width:0.609388"
-           id="g6013-8-0"
-           transform="matrix(0.11180779,0,0,0.11180779,-8.7227868,29.67515)">
-          <use
-             xlink:href="#glyph11-7"
-             x="633.76898"
-             y="978.34998"
-             id="use6009-2-6"
-             width="100%"
-             height="100%"
-             style="stroke-width:0.609388" />
-          <use
-             xlink:href="#glyph11-8"
-             x="636.69397"
-             y="978.34998"
-             id="use6011-1-4"
-             width="100%"
-             height="100%"
-             style="stroke-width:0.609388" />
-        </g>
-        <g
-           style="fill:#cf915c;fill-opacity:1;stroke-width:0.609388"
-           id="g6027-3-6"
-           transform="matrix(0.11180779,0,0,0.11180779,-8.7227868,29.67515)">
-          <use
-             xlink:href="#glyph11-5"
-             x="644.7655"
-             y="978.34998"
-             id="use6015-8-2"
-             width="100%"
-             height="100%"
-             style="stroke-width:0.609388" />
-          <use
-             xlink:href="#glyph11-6"
-             x="652.0105"
-             y="978.34998"
-             id="use6017-9-5"
-             width="100%"
-             height="100%"
-             style="stroke-width:0.609388" />
-          <use
-             xlink:href="#glyph11-9"
-             x="658.62549"
-             y="978.34998"
-             id="use6019-3-8"
-             width="100%"
-             height="100%"
-             style="stroke-width:0.609388" />
-          <use
-             xlink:href="#glyph11-10"
-             x="665.93048"
-             y="978.34998"
-             id="use6021-5-6"
-             width="100%"
-             height="100%"
-             style="stroke-width:0.609388" />
-          <use
-             xlink:href="#glyph11-11"
-             x="670.34052"
-             y="978.34998"
-             id="use6023-4-2"
-             width="100%"
-             height="100%"
-             style="stroke-width:0.609388" />
-          <use
-             xlink:href="#glyph11-12"
-             x="673.53552"
-             y="978.34998"
-             id="use6025-1-8"
-             width="100%"
-             height="100%"
-             style="stroke-width:0.609388" />
-        </g>
-        <g
-           style="fill:#cf915c;fill-opacity:1;stroke-width:0.609388"
-           id="g6031-2-4"
-           transform="matrix(0.11180779,0,0,0.11180779,-8.7227868,29.67515)">
-          <use
-             xlink:href="#glyph11-5"
-             x="678.08051"
-             y="978.34998"
-             id="use6029-2-7"
-             width="100%"
-             height="100%"
-             style="stroke-width:0.609388" />
-        </g>
+         id="g184801-6-4-7-3"
+         transform="matrix(2.5445294,0,0,2.5444444,113.3206,327.43167)"
+         style="stroke-width:0.401028">
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:3.52778px;line-height:0.95;font-family:sans-serif;white-space:pre;inline-size:62.0522;display:inline;fill:#4f3528;fill-opacity:1;stroke:none;stroke-width:0.106105"
+           x="4.7371435"
+           y="34.615707"
+           id="text86605-8-5-8-0-8-8"
+           transform="translate(-6.7894462,-46.652238)"><tspan
+             x="4.7371435"
+             y="34.615707"
+             id="tspan12"><tspan
+               style="font-family:Arial;-inkscape-font-specification:Arial"
+               id="tspan11">Sobre un muffin inglés con jamón </tspan></tspan><tspan
+             x="4.7371435"
+             y="37.999276"
+             id="tspan14"><tspan
+               style="font-family:Arial;-inkscape-font-specification:Arial"
+               id="tspan13">ahumado y salsa de Crepes &amp; Waffles.</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0.95;font-family:sans-serif;white-space:pre;inline-size:44.1902;display:inline;fill:#4f3528;fill-opacity:1;stroke:none;stroke-width:0.0834197"
+           x="4.7371435"
+           y="34.615707"
+           id="text86605-8-6-8-5-1-0-0"
+           transform="matrix(1.2953807,0,0,1.2489189,-8.2855951,-58.362449)"><tspan
+             x="4.7371435"
+             y="34.615707"
+             id="tspan16"><tspan
+               style="font-weight:bold;font-family:Arial;-inkscape-font-specification:'Arial Bold'"
+               id="tspan15">Benedictine</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:2.49619px;line-height:0.95;font-family:sans-serif;white-space:pre;inline-size:44.1902;display:inline;fill:#4f3528;fill-opacity:1;stroke:none;stroke-width:0.088899"
+           x="4.7371435"
+           y="34.615707"
+           id="text86605-8-6-5-2-3-7-8-4"
+           transform="matrix(1.1406231,0,0,1.2489189,39.566509,-58.699563)"><tspan
+             x="4.7371435"
+             y="34.615707"
+             id="tspan18"><tspan
+               style="font-weight:bold;font-family:'Arial Rounded MT Bold';-inkscape-font-specification:'Arial Rounded MT Bold,  Bold'"
+               id="tspan17">$ 16.900</tspan></tspan></text>
       </g>
-      <path
-         style="fill:none;stroke:#cf915c;stroke-width:0.138644;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1"
-         d="M 0,161.60624 H 19.175001"
-         id="path6033-7-2" />
-    </g>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:4.7139px;line-height:0.95;font-family:sans-serif;white-space:pre;inline-size:58.8474;display:inline;fill:#4f3528;fill-opacity:1;stroke:none;stroke-width:0.103983"
-       x="4.7371435"
-       y="34.615707"
-       id="text86605-8-5"
-       transform="matrix(2.5445303,0,0,2.5444444,-5.5678393,9.4447464)"><tspan
-         x="4.7371435"
-         y="34.615707"
-         id="tspan4662"><tspan
-           style="font-family:Arial;-inkscape-font-specification:Arial"
-           id="tspan4660">Crepe con huevos revueltos </tspan></tspan><tspan
-         x="4.7371435"
-         y="39.136907"
-         id="tspan4666"><tspan
-           style="font-family:Arial;-inkscape-font-specification:Arial"
-           id="tspan4664">a la crema sobre un fondo </tspan></tspan><tspan
-         x="4.7371435"
-         y="43.658106"
-         id="tspan4670"><tspan
-           style="font-family:Arial;-inkscape-font-specification:Arial"
-           id="tspan4668">de salsa de queso.</tspan></tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:4.43767px;line-height:0.95;font-family:sans-serif;white-space:pre;inline-size:44.1902;display:inline;fill:#4f3528;fill-opacity:1;stroke:none;stroke-width:0.0817513"
-       x="4.7371435"
-       y="34.615707"
-       id="text86605-8-6-9"
-       transform="matrix(3.2961343,0,0,3.1778047,-9.3748298,-28.449547)"><tspan
-         x="4.7371435"
-         y="34.615707"
-         id="tspan4674"><tspan
-           style="font-weight:bold;font-family:Arial;-inkscape-font-specification:'Arial Bold'"
-           id="tspan4672">Crepes &amp; Waffles</tspan></tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:2.49619px;line-height:0.95;font-family:sans-serif;white-space:pre;inline-size:44.1902;display:inline;fill:#4f3528;fill-opacity:1;stroke:none;stroke-width:0.087121"
-       x="4.7371435"
-       y="34.615707"
-       id="text86605-8-6-5-91"
-       transform="matrix(2.902349,0,0,3.1778047,112.38626,-29.69372)"><tspan
-         x="4.7371435"
-         y="34.615707"
-         id="tspan4678"><tspan
-           style="font-weight:bold;font-family:'Arial Rounded MT Bold';-inkscape-font-specification:'Arial Rounded MT Bold,  Bold'"
-           id="tspan4676">$ 13.600</tspan></tspan></text>
-    <g
-       id="g184801-6-4-7-3"
-       transform="matrix(2.5445294,0,0,2.5444444,113.3206,327.43167)"
-       style="stroke-width:0.393007">
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:3.52778px;line-height:0.95;font-family:sans-serif;white-space:pre;inline-size:62.0522;display:inline;fill:#4f3528;fill-opacity:1;stroke:none;stroke-width:0.103983"
-         x="4.7371435"
-         y="34.615707"
-         id="text86605-8-5-8-0-8-8"
-         transform="translate(-6.7894462,-46.652238)"><tspan
+      <g
+         id="g234006-7"
+         transform="matrix(2.5445294,0,0,2.5444444,-185.16362,24.303151)"
+         style="stroke-width:0.401028">
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:3.52778px;line-height:0.95;font-family:sans-serif;white-space:pre;inline-size:58.1891;display:inline;fill:#4f3528;fill-opacity:1;stroke:none;stroke-width:0.106105"
            x="4.7371435"
            y="34.615707"
-           id="tspan4682"><tspan
+           id="text86605-8-5-8-0-8-2-6"
+           transform="translate(110.47144,95.087772)"><tspan
+             x="4.7371435"
+             y="34.615707"
+             id="tspan20"><tspan
+               style="font-family:Arial;-inkscape-font-specification:Arial"
+               id="tspan19">Gratinados con el toque especial de </tspan></tspan><tspan
+             x="4.7371435"
+             y="37.999276"
+             id="tspan22"><tspan
+               style="font-family:Arial;-inkscape-font-specification:Arial"
+               id="tspan21">Crepes &amp; Waffles.</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0.95;font-family:sans-serif;white-space:pre;inline-size:44.1902;display:inline;fill:#4f3528;fill-opacity:1;stroke:none;stroke-width:0.0834197"
+           x="4.7371435"
+           y="34.615707"
+           id="text86605-8-6-8-5-1-0-5-8"
+           transform="matrix(1.2953807,0,0,1.2489189,108.97529,83.377561)"><tspan
+             x="4.7371435"
+             y="34.615707"
+             id="tspan24"><tspan
+               style="font-weight:bold;font-family:Arial;-inkscape-font-specification:'Arial Bold'"
+               id="tspan23">Poché</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:2.49619px;line-height:0.95;font-family:sans-serif;white-space:pre;inline-size:44.1902;display:inline;fill:#4f3528;fill-opacity:1;stroke:none;stroke-width:0.088899"
+           x="4.7371435"
+           y="34.615707"
+           id="text86605-8-6-5-2-3-7-8-0-9"
+           transform="matrix(1.1406231,0,0,1.2489189,158.56273,83.040447)"><tspan
+             x="4.7371435"
+             y="34.615707"
+             id="tspan26"><tspan
+               style="font-weight:bold;font-family:'Arial Rounded MT Bold';-inkscape-font-specification:'Arial Rounded MT Bold,  Bold'"
+               id="tspan25">$ 7.300</tspan></tspan></text>
+      </g>
+      <g
+         id="g254840-0"
+         style="stroke-width:0.401028"
+         transform="matrix(2.5445294,0,0,2.5444444,1.0396491e-5,-1.3328163e-7)">
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:3.52778px;line-height:0.95;font-family:sans-serif;white-space:pre;inline-size:60.2437;display:inline;fill:#4f3528;fill-opacity:1;stroke:none;stroke-width:0.106105"
+           x="4.7371435"
+           y="34.615707"
+           id="text86605-8-5-8-0-8-7-6"
+           transform="translate(37.864917,93.335972)"><tspan
+             x="4.7371435"
+             y="34.615707"
+             id="tspan28"><tspan
+               style="font-family:Arial;-inkscape-font-specification:Arial"
+               id="tspan27">Acompañados con una delicada salsa </tspan></tspan><tspan
+             x="4.7371435"
+             y="37.999276"
+             id="tspan30"><tspan
+               style="font-family:Arial;-inkscape-font-specification:Arial"
+               id="tspan29">con un ligero toque de mostaza.</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:2.84288px;line-height:0.95;font-family:sans-serif;white-space:pre;inline-size:44.1902;display:inline;fill:#4f3528;fill-opacity:1;stroke:none;stroke-width:0.0834197"
+           x="4.7371435"
+           y="34.615707"
+           id="text86605-8-6-8-5-1-0-8-8"
+           transform="matrix(1.2953807,0,0,1.2489189,36.191523,81.280441)"><tspan
+             x="4.7371435"
+             y="34.615707"
+             id="tspan32"><tspan
+               style="font-weight:bold;font-family:Arial;-inkscape-font-specification:'Arial Bold'"
+               id="tspan31">Benedictine con Espinaca</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:2.49619px;line-height:0.95;font-family:sans-serif;white-space:pre;inline-size:44.1902;display:inline;fill:#4f3528;fill-opacity:1;stroke:none;stroke-width:0.088899"
+           x="4.7371435"
+           y="34.615707"
+           id="text86605-8-6-5-2-3-7-8-3-7"
+           transform="matrix(1.1406231,0,0,1.2489189,84.220872,81.288647)"><tspan
+             x="4.7371435"
+             y="34.615707"
+             id="tspan34"><tspan
+               style="font-weight:bold;font-family:'Arial Rounded MT Bold';-inkscape-font-specification:'Arial Rounded MT Bold,  Bold'"
+               id="tspan33">$ 17.600</tspan></tspan></text>
+      </g>
+      <g
+         id="g184801-6-4-9"
+         transform="matrix(2.5445294,0,0,2.5444444,113.85966,284.66893)"
+         style="stroke-width:0.401028">
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:3.52778px;line-height:0.95;font-family:sans-serif;white-space:pre;inline-size:55.4995;display:inline;fill:#4f3528;fill-opacity:1;stroke:none;stroke-width:0.106105"
+           x="4.7371435"
+           y="34.615707"
+           id="text86605-8-5-8-0-0"
+           transform="translate(-6.7894462,-46.652238)"><tspan
+             x="4.7371435"
+             y="34.615707"
+             id="tspan36"><tspan
+               style="font-family:Arial;-inkscape-font-specification:Arial"
+               id="tspan35">Huevos poché, corte especial de </tspan></tspan><tspan
+             x="4.7371435"
+             y="37.999276"
+             id="tspan38"><tspan
+               style="font-family:Arial;-inkscape-font-specification:Arial"
+               id="tspan37">tocineta, aguacate y tomate asado, </tspan></tspan><tspan
+             x="4.7371435"
+             y="41.382844"
+             id="tspan40"><tspan
+               style="font-family:Arial;-inkscape-font-specification:Arial"
+               id="tspan39">todo sobre una tostada de pan </tspan></tspan><tspan
+             x="4.7371435"
+             y="44.766412"
+             id="tspan42"><tspan
+               style="font-family:Arial;-inkscape-font-specification:Arial"
+               id="tspan41">artesanal.</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0.95;font-family:sans-serif;white-space:pre;inline-size:44.1902;display:inline;fill:#4f3528;fill-opacity:1;stroke:none;stroke-width:0.0834197"
+           x="4.7371435"
+           y="34.615707"
+           id="text86605-8-6-8-5-1-3"
+           transform="matrix(1.2953807,0,0,1.2489189,-8.2855951,-58.362449)"><tspan
+             x="4.7371435"
+             y="34.615707"
+             id="tspan44"><tspan
+               style="font-weight:bold;font-family:Arial;-inkscape-font-specification:'Arial Bold'"
+               id="tspan43">Australianos</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:2.49619px;line-height:0.95;font-family:sans-serif;white-space:pre;inline-size:44.1902;display:inline;fill:#4f3528;fill-opacity:1;stroke:none;stroke-width:0.088899"
+           x="4.7371435"
+           y="34.615707"
+           id="text86605-8-6-5-2-3-7-3"
+           transform="matrix(1.1406231,0,0,1.2489189,39.566509,-58.699563)"><tspan
+             x="4.7371435"
+             y="34.615707"
+             id="tspan46"><tspan
+               style="font-weight:bold;font-family:'Arial Rounded MT Bold';-inkscape-font-specification:'Arial Rounded MT Bold,  Bold'"
+               id="tspan45">$ 20.900</tspan></tspan></text>
+      </g>
+      <g
+         id="g184820-0-3"
+         transform="matrix(2.5445294,0,0,2.5444444,101.50973,250.36624)"
+         style="stroke-width:0.401028">
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0.95;font-family:sans-serif;white-space:pre;inline-size:61.426;display:inline;fill:#4f3528;fill-opacity:1;stroke:none;stroke-width:0.106105"
+           x="4.7371435"
+           y="34.615707"
+           id="text86605-8-0-6-7"
+           transform="translate(-2.0242857,17.508064)"><tspan
+             x="4.7371435"
+             y="34.615707"
+             id="tspan48"><tspan
+               style="font-size:3.52778px"
+               id="tspan47">Cacerola de huevos, salsa de </tspan></tspan><tspan
+             x="4.7371435"
+             y="37.967099"
+             id="tspan51"><tspan
+               style="font-size:3.52778px"
+               id="tspan49">tomatillo </tspan><tspan
+               style="font-size:3.52778px"
+               id="tspan50">verde y rojo, aguacate, </tspan></tspan><tspan
+             x="4.7371435"
+             y="41.31849"
+             id="tspan55"><tspan
+               style="font-size:3.52778px"
+               id="tspan52">maíz, pico de </tspan><tspan
+               style="font-size:3.52778px"
+               id="tspan53">gallo y crujiente </tspan><tspan
+               style="font-size:3.52778px"
+               id="tspan54">tortilla </tspan></tspan><tspan
+             x="4.7371435"
+             y="44.669881"
+             id="tspan58"><tspan
+               style="font-size:3.52778px"
+               id="tspan56">mexicana.</tspan><tspan
+               style="font-family:Arial;-inkscape-font-specification:Arial"
+               id="tspan57">
+</tspan></tspan><tspan
+             x="4.7371435"
+             y="47.753203"
+             id="tspan60"><tspan
+               style="font-weight:bold;font-size:2.82222px;font-family:Arial;-inkscape-font-specification:'Arial Bold'"
+               id="tspan59">(Ligeramente picante).</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0.95;font-family:sans-serif;white-space:pre;inline-size:44.1902;display:inline;fill:#4f3528;fill-opacity:1;stroke:none;stroke-width:0.0834197"
+           x="4.7371435"
+           y="34.615707"
+           id="text86605-8-6-4-2-3"
+           transform="matrix(1.2953807,0,0,1.2489189,-3.5204338,5.797853)"><tspan
+             x="4.7371435"
+             y="34.615707"
+             id="tspan62"><tspan
+               style="font-weight:bold;font-family:Arial;-inkscape-font-specification:'Arial Bold'"
+               id="tspan61">Tulum</tspan></tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:2.49619px;line-height:0.95;font-family:sans-serif;white-space:pre;inline-size:44.1902;display:inline;fill:#4f3528;fill-opacity:1;stroke:none;stroke-width:0.088899"
+           x="4.7371435"
+           y="34.615707"
+           id="text86605-8-6-5-9-6-2"
+           transform="matrix(1.1406231,0,0,1.2489189,44.33167,5.460739)"><tspan
+             x="4.7371435"
+             y="34.615707"
+             id="tspan64"><tspan
+               style="font-weight:bold;font-family:'Arial Rounded MT Bold';-inkscape-font-specification:'Arial Rounded MT Bold,  Bold'"
+               id="tspan63">$ 14.200</tspan></tspan></text>
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0.95;font-family:sans-serif;white-space:pre;inline-size:51.378;display:inline;fill:#4f3528;fill-opacity:1;stroke:none;stroke-width:0.102971"
+         x="4.7371435"
+         y="34.615707"
+         id="text86605-8-0-65"
+         transform="matrix(2.7017642,0,0,2.5444444,-6.1922568,77.923716)"><tspan
+           x="4.7371435"
+           y="34.615707"
+           id="tspan66"><tspan
+             style="font-size:4.57467px;font-family:Arial;-inkscape-font-specification:Arial"
+             id="tspan65">Tostada artesanal, dos </tspan></tspan><tspan
+           x="4.7371435"
+           y="38.961645"
+           id="tspan68"><tspan
+             style="font-size:4.57467px;font-family:Arial;-inkscape-font-specification:Arial"
+             id="tspan67">huevos poché, tocineta </tspan></tspan><tspan
+           x="4.7371435"
+           y="43.307581"
+           id="tspan70"><tspan
+             style="font-size:4.57467px;font-family:Arial;-inkscape-font-specification:Arial"
+             id="tspan69">crujiente, aguacate y una </tspan></tspan><tspan
+           x="4.7371435"
+           y="47.653516"
+           id="tspan72"><tspan
+             style="font-size:4.57467px;font-family:Arial;-inkscape-font-specification:Arial"
+             id="tspan71">salsa de chile chipotle </tspan></tspan><tspan
+           x="4.7371435"
+           y="51.999452"
+           id="tspan75"><tspan
+             style="font-size:4.57467px;font-family:Arial;-inkscape-font-specification:Arial"
+             id="tspan73">resaltando el </tspan><tspan
+             style="font-size:4.57467px;font-family:Arial;-inkscape-font-specification:Arial"
+             id="tspan74">sabor de </tspan></tspan><tspan
+           x="4.7371435"
+           y="56.345388"
+           id="tspan78"><tspan
+             style="font-size:4.57467px;font-family:Arial;-inkscape-font-specification:Arial"
+             id="tspan76">México.</tspan><tspan
              style="font-family:Arial;-inkscape-font-specification:Arial"
-             id="tspan4680">Sobre un muffin inglés con jamón </tspan></tspan><tspan
-           x="4.7371435"
-           y="37.999276"
-           id="tspan4686"><tspan
-             style="font-family:Arial;-inkscape-font-specification:Arial"
-             id="tspan4684">ahumado y salsa de Crepes &amp; Waffles.</tspan></tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0.95;font-family:sans-serif;white-space:pre;inline-size:44.1902;display:inline;fill:#4f3528;fill-opacity:1;stroke:none;stroke-width:0.0817513"
-         x="4.7371435"
-         y="34.615707"
-         id="text86605-8-6-8-5-1-0-0"
-         transform="matrix(1.2953807,0,0,1.2489189,-8.2855951,-58.362449)"><tspan
-           x="4.7371435"
-           y="34.615707"
-           id="tspan4690"><tspan
-             style="font-weight:bold;font-family:Arial;-inkscape-font-specification:'Arial Bold'"
-             id="tspan4688">Benedictine</tspan></tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:2.49619px;line-height:0.95;font-family:sans-serif;white-space:pre;inline-size:44.1902;display:inline;fill:#4f3528;fill-opacity:1;stroke:none;stroke-width:0.087121"
-         x="4.7371435"
-         y="34.615707"
-         id="text86605-8-6-5-2-3-7-8-4"
-         transform="matrix(1.1406231,0,0,1.2489189,39.566509,-58.699563)"><tspan
-           x="4.7371435"
-           y="34.615707"
-           id="tspan4694"><tspan
-             style="font-weight:bold;font-family:'Arial Rounded MT Bold';-inkscape-font-specification:'Arial Rounded MT Bold,  Bold'"
-             id="tspan4692">$ 16.900</tspan></tspan></text>
-    </g>
-    <g
-       id="g234006-7"
-       transform="matrix(2.5445294,0,0,2.5444444,-185.16362,24.303151)"
-       style="stroke-width:0.393007">
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:3.52778px;line-height:0.95;font-family:sans-serif;white-space:pre;inline-size:58.1891;display:inline;fill:#4f3528;fill-opacity:1;stroke:none;stroke-width:0.103983"
-         x="4.7371435"
-         y="34.615707"
-         id="text86605-8-5-8-0-8-2-6"
-         transform="translate(110.47144,95.087772)"><tspan
-           x="4.7371435"
-           y="34.615707"
-           id="tspan4698"><tspan
-             style="font-family:Arial;-inkscape-font-specification:Arial"
-             id="tspan4696">Gratinados con el toque especial de </tspan></tspan><tspan
-           x="4.7371435"
-           y="37.999276"
-           id="tspan4702"><tspan
-             style="font-family:Arial;-inkscape-font-specification:Arial"
-             id="tspan4700">Crepes &amp; Waffles.</tspan></tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0.95;font-family:sans-serif;white-space:pre;inline-size:44.1902;display:inline;fill:#4f3528;fill-opacity:1;stroke:none;stroke-width:0.0817513"
-         x="4.7371435"
-         y="34.615707"
-         id="text86605-8-6-8-5-1-0-5-8"
-         transform="matrix(1.2953807,0,0,1.2489189,108.97529,83.377561)"><tspan
-           x="4.7371435"
-           y="34.615707"
-           id="tspan4706"><tspan
-             style="font-weight:bold;font-family:Arial;-inkscape-font-specification:'Arial Bold'"
-             id="tspan4704">Poché</tspan></tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:2.49619px;line-height:0.95;font-family:sans-serif;white-space:pre;inline-size:44.1902;display:inline;fill:#4f3528;fill-opacity:1;stroke:none;stroke-width:0.087121"
-         x="4.7371435"
-         y="34.615707"
-         id="text86605-8-6-5-2-3-7-8-0-9"
-         transform="matrix(1.1406231,0,0,1.2489189,158.56273,83.040447)"><tspan
-           x="4.7371435"
-           y="34.615707"
-           id="tspan4710"><tspan
-             style="font-weight:bold;font-family:'Arial Rounded MT Bold';-inkscape-font-specification:'Arial Rounded MT Bold,  Bold'"
-             id="tspan4708">$ 7.300</tspan></tspan></text>
-    </g>
-    <g
-       id="g254840-0"
-       style="stroke-width:0.393007"
-       transform="matrix(2.5445294,0,0,2.5444444,1.0396491e-5,-1.3328163e-7)">
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:3.52778px;line-height:0.95;font-family:sans-serif;white-space:pre;inline-size:60.2437;display:inline;fill:#4f3528;fill-opacity:1;stroke:none;stroke-width:0.103983"
-         x="4.7371435"
-         y="34.615707"
-         id="text86605-8-5-8-0-8-7-6"
-         transform="translate(37.864917,93.335972)"><tspan
-           x="4.7371435"
-           y="34.615707"
-           id="tspan4714"><tspan
-             style="font-family:Arial;-inkscape-font-specification:Arial"
-             id="tspan4712">Acompañados con una delicada salsa </tspan></tspan><tspan
-           x="4.7371435"
-           y="37.999276"
-           id="tspan4718"><tspan
-             style="font-family:Arial;-inkscape-font-specification:Arial"
-             id="tspan4716">con un ligero toque de mostaza.</tspan></tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:2.84288px;line-height:0.95;font-family:sans-serif;white-space:pre;inline-size:44.1902;display:inline;fill:#4f3528;fill-opacity:1;stroke:none;stroke-width:0.0817513"
-         x="4.7371435"
-         y="34.615707"
-         id="text86605-8-6-8-5-1-0-8-8"
-         transform="matrix(1.2953807,0,0,1.2489189,36.191523,81.280441)"><tspan
-           x="4.7371435"
-           y="34.615707"
-           id="tspan4722"><tspan
-             style="font-weight:bold;font-family:Arial;-inkscape-font-specification:'Arial Bold'"
-             id="tspan4720">Benedictine con Espinaca</tspan></tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:2.49619px;line-height:0.95;font-family:sans-serif;white-space:pre;inline-size:44.1902;display:inline;fill:#4f3528;fill-opacity:1;stroke:none;stroke-width:0.087121"
-         x="4.7371435"
-         y="34.615707"
-         id="text86605-8-6-5-2-3-7-8-3-7"
-         transform="matrix(1.1406231,0,0,1.2489189,84.220872,81.288647)"><tspan
-           x="4.7371435"
-           y="34.615707"
-           id="tspan4726"><tspan
-             style="font-weight:bold;font-family:'Arial Rounded MT Bold';-inkscape-font-specification:'Arial Rounded MT Bold,  Bold'"
-             id="tspan4724">$ 17.600</tspan></tspan></text>
-    </g>
-    <g
-       id="g184801-6-4-9"
-       transform="matrix(2.5445294,0,0,2.5444444,113.85966,284.66893)"
-       style="stroke-width:0.393007">
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:3.52778px;line-height:0.95;font-family:sans-serif;white-space:pre;inline-size:55.4995;display:inline;fill:#4f3528;fill-opacity:1;stroke:none;stroke-width:0.103983"
-         x="4.7371435"
-         y="34.615707"
-         id="text86605-8-5-8-0-0"
-         transform="translate(-6.7894462,-46.652238)"><tspan
-           x="4.7371435"
-           y="34.615707"
-           id="tspan4730"><tspan
-             style="font-family:Arial;-inkscape-font-specification:Arial"
-             id="tspan4728">Huevos poché, corte especial de </tspan></tspan><tspan
-           x="4.7371435"
-           y="37.999276"
-           id="tspan4734"><tspan
-             style="font-family:Arial;-inkscape-font-specification:Arial"
-             id="tspan4732">tocineta, aguacate y tomate asado, </tspan></tspan><tspan
-           x="4.7371435"
-           y="41.382844"
-           id="tspan4738"><tspan
-             style="font-family:Arial;-inkscape-font-specification:Arial"
-             id="tspan4736">todo sobre una tostada de pan </tspan></tspan><tspan
-           x="4.7371435"
-           y="44.766412"
-           id="tspan4742"><tspan
-             style="font-family:Arial;-inkscape-font-specification:Arial"
-             id="tspan4740">artesanal.</tspan></tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0.95;font-family:sans-serif;white-space:pre;inline-size:44.1902;display:inline;fill:#4f3528;fill-opacity:1;stroke:none;stroke-width:0.0817513"
-         x="4.7371435"
-         y="34.615707"
-         id="text86605-8-6-8-5-1-3"
-         transform="matrix(1.2953807,0,0,1.2489189,-8.2855951,-58.362449)"><tspan
-           x="4.7371435"
-           y="34.615707"
-           id="tspan4746"><tspan
-             style="font-weight:bold;font-family:Arial;-inkscape-font-specification:'Arial Bold'"
-             id="tspan4744">Australianos</tspan></tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:2.49619px;line-height:0.95;font-family:sans-serif;white-space:pre;inline-size:44.1902;display:inline;fill:#4f3528;fill-opacity:1;stroke:none;stroke-width:0.087121"
-         x="4.7371435"
-         y="34.615707"
-         id="text86605-8-6-5-2-3-7-3"
-         transform="matrix(1.1406231,0,0,1.2489189,39.566509,-58.699563)"><tspan
-           x="4.7371435"
-           y="34.615707"
-           id="tspan4750"><tspan
-             style="font-weight:bold;font-family:'Arial Rounded MT Bold';-inkscape-font-specification:'Arial Rounded MT Bold,  Bold'"
-             id="tspan4748">$ 20.900</tspan></tspan></text>
-    </g>
-    <g
-       id="g184820-0-3"
-       transform="matrix(2.5445294,0,0,2.5444444,101.50973,250.36624)"
-       style="stroke-width:0.393007">
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0.95;font-family:sans-serif;white-space:pre;inline-size:61.426;display:inline;fill:#4f3528;fill-opacity:1;stroke:none;stroke-width:0.103983"
-         x="4.7371435"
-         y="34.615707"
-         id="text86605-8-0-6-7"
-         transform="translate(-2.0242857,17.508064)"><tspan
-           x="4.7371435"
-           y="34.615707"
-           id="tspan4754"><tspan
-             style="font-size:3.52778px"
-             id="tspan4752">Cacerola de huevos, salsa de </tspan></tspan><tspan
-           x="4.7371435"
-           y="37.967099"
-           id="tspan4760"><tspan
-             style="font-size:3.52778px"
-             id="tspan4756">tomatillo </tspan><tspan
-             style="font-size:3.52778px"
-             id="tspan4758">verde y rojo, aguacate, </tspan></tspan><tspan
-           x="4.7371435"
-           y="41.31849"
-           id="tspan4768"><tspan
-             style="font-size:3.52778px"
-             id="tspan4762">maíz, pico de </tspan><tspan
-             style="font-size:3.52778px"
-             id="tspan4764">gallo y crujiente </tspan><tspan
-             style="font-size:3.52778px"
-             id="tspan4766">tortilla </tspan></tspan><tspan
-           x="4.7371435"
-           y="44.669881"
-           id="tspan4774"><tspan
-             style="font-size:3.52778px"
-             id="tspan4770">mexicana.</tspan><tspan
-             style="font-family:Arial;-inkscape-font-specification:Arial"
-             id="tspan4772">
+             id="tspan77">
 </tspan></tspan><tspan
            x="4.7371435"
-           y="47.753203"
-           id="tspan4778"><tspan
+           y="59.669474"
+           id="tspan80"><tspan
              style="font-weight:bold;font-size:2.82222px;font-family:Arial;-inkscape-font-specification:'Arial Bold'"
-             id="tspan4776">(Ligeramente picante).</tspan></tspan></text>
+             id="tspan79">(Ligeramente picante).</tspan></tspan></text>
       <text
          xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0.95;font-family:sans-serif;white-space:pre;inline-size:44.1902;display:inline;fill:#4f3528;fill-opacity:1;stroke:none;stroke-width:0.0817513"
+         style="font-style:normal;font-weight:normal;font-size:4.43767px;line-height:0.95;font-family:sans-serif;white-space:pre;inline-size:44.1902;display:inline;fill:#4f3528;fill-opacity:1;stroke:none;stroke-width:0.0834197"
          x="4.7371435"
          y="34.615707"
-         id="text86605-8-6-4-2-3"
-         transform="matrix(1.2953807,0,0,1.2489189,-3.5204338,5.797853)"><tspan
+         id="text86605-8-6-4-26"
+         transform="matrix(3.2961343,0,0,3.1778047,-9.2683194,42.247166)"><tspan
            x="4.7371435"
            y="34.615707"
-           id="tspan4782"><tspan
+           id="tspan82"><tspan
              style="font-weight:bold;font-family:Arial;-inkscape-font-specification:'Arial Bold'"
-             id="tspan4780">Tulum</tspan></tspan></text>
+             id="tspan81">Rosarito</tspan></tspan></text>
       <text
          xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:2.49619px;line-height:0.95;font-family:sans-serif;white-space:pre;inline-size:44.1902;display:inline;fill:#4f3528;fill-opacity:1;stroke:none;stroke-width:0.087121"
+         style="font-style:normal;font-weight:normal;font-size:2.49619px;line-height:0.95;font-family:sans-serif;white-space:pre;inline-size:44.1902;display:inline;fill:#4f3528;fill-opacity:1;stroke:none;stroke-width:0.088899"
          x="4.7371435"
          y="34.615707"
-         id="text86605-8-6-5-9-6-2"
-         transform="matrix(1.1406231,0,0,1.2489189,44.33167,5.460739)"><tspan
+         id="text86605-8-6-5-9-5"
+         transform="matrix(2.902349,0,0,3.1778047,112.49276,39.780772)"><tspan
            x="4.7371435"
            y="34.615707"
-           id="tspan4786"><tspan
+           id="tspan84"><tspan
              style="font-weight:bold;font-family:'Arial Rounded MT Bold';-inkscape-font-specification:'Arial Rounded MT Bold,  Bold'"
-             id="tspan4784">$ 14.200</tspan></tspan></text>
+             id="tspan83">$ 18.900</tspan></tspan></text>
     </g>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0.95;font-family:sans-serif;white-space:pre;inline-size:51.378;display:inline;fill:#4f3528;fill-opacity:1;stroke:none;stroke-width:0.100912"
-       x="4.7371435"
-       y="34.615707"
-       id="text86605-8-0-65"
-       transform="matrix(2.7017642,0,0,2.5444444,-6.1922568,77.923716)"><tspan
-         x="4.7371435"
-         y="34.615707"
-         id="tspan4790"><tspan
-           style="font-size:4.57467px;font-family:Arial;-inkscape-font-specification:Arial"
-           id="tspan4788">Tostada artesanal, dos </tspan></tspan><tspan
-         x="4.7371435"
-         y="38.961645"
-         id="tspan4794"><tspan
-           style="font-size:4.57467px;font-family:Arial;-inkscape-font-specification:Arial"
-           id="tspan4792">huevos poché, tocineta </tspan></tspan><tspan
-         x="4.7371435"
-         y="43.307581"
-         id="tspan4798"><tspan
-           style="font-size:4.57467px;font-family:Arial;-inkscape-font-specification:Arial"
-           id="tspan4796">crujiente, aguacate y una </tspan></tspan><tspan
-         x="4.7371435"
-         y="47.653516"
-         id="tspan4802"><tspan
-           style="font-size:4.57467px;font-family:Arial;-inkscape-font-specification:Arial"
-           id="tspan4800">salsa de chile chipotle </tspan></tspan><tspan
-         x="4.7371435"
-         y="51.999452"
-         id="tspan4808"><tspan
-           style="font-size:4.57467px;font-family:Arial;-inkscape-font-specification:Arial"
-           id="tspan4804">resaltando el </tspan><tspan
-           style="font-size:4.57467px;font-family:Arial;-inkscape-font-specification:Arial"
-           id="tspan4806">sabor de </tspan></tspan><tspan
-         x="4.7371435"
-         y="56.345388"
-         id="tspan4814"><tspan
-           style="font-size:4.57467px;font-family:Arial;-inkscape-font-specification:Arial"
-           id="tspan4810">México.</tspan><tspan
-           style="font-family:Arial;-inkscape-font-specification:Arial"
-           id="tspan4812">
-</tspan></tspan><tspan
-         x="4.7371435"
-         y="59.669474"
-         id="tspan4818"><tspan
-           style="font-weight:bold;font-size:2.82222px;font-family:Arial;-inkscape-font-specification:'Arial Bold'"
-           id="tspan4816">(Ligeramente picante).</tspan></tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:4.43767px;line-height:0.95;font-family:sans-serif;white-space:pre;inline-size:44.1902;display:inline;fill:#4f3528;fill-opacity:1;stroke:none;stroke-width:0.0817513"
-       x="4.7371435"
-       y="34.615707"
-       id="text86605-8-6-4-26"
-       transform="matrix(3.2961343,0,0,3.1778047,-9.2683194,42.247166)"><tspan
-         x="4.7371435"
-         y="34.615707"
-         id="tspan4822"><tspan
-           style="font-weight:bold;font-family:Arial;-inkscape-font-specification:'Arial Bold'"
-           id="tspan4820">Rosarito</tspan></tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:2.49619px;line-height:0.95;font-family:sans-serif;white-space:pre;inline-size:44.1902;display:inline;fill:#4f3528;fill-opacity:1;stroke:none;stroke-width:0.087121"
-       x="4.7371435"
-       y="34.615707"
-       id="text86605-8-6-5-9-5"
-       transform="matrix(2.902349,0,0,3.1778047,112.49276,39.780772)"><tspan
-         x="4.7371435"
-         y="34.615707"
-         id="tspan4826"><tspan
-           style="font-weight:bold;font-family:'Arial Rounded MT Bold';-inkscape-font-specification:'Arial Rounded MT Bold,  Bold'"
-           id="tspan4824">$ 18.900</tspan></tspan></text>
     <g
        style="fill:#4f3528;fill-opacity:1"
        id="g4619"
@@ -6484,38 +6485,21 @@
          width="100%"
          height="100%" />
     </g>
-    <rect
-       style="fill:#00ffff;fill-opacity:1;stroke-width:0"
-       id="rect855-8-1-9-3"
-       width="13.229167"
-       height="24.606249"
-       x="-13.229167"
-       y="460.11041" />
-    <rect
-       style="fill:#0000ff;fill-opacity:1;stroke-width:0"
-       id="rect855-8-1-9-3-3"
-       width="13.229167"
-       height="30.1625"
-       x="-13.229167"
-       y="429.94791" />
-    <rect
-       style="fill:#00ffff;fill-opacity:1;stroke-width:0"
-       id="rect855-8-1-9-7-5"
-       width="13.229167"
-       height="54.239582"
-       x="-13.229167"
-       y="9.382324e-07" />
-    <rect
-       style="fill:#0000ff;fill-opacity:1;stroke-width:0"
-       id="rect855-8-1-9-7-5-3"
-       width="13.229166"
-       height="7.9375"
-       x="-13.22916"
-       y="54.239582" />
     <text
        xml:space="preserve"
        transform="scale(0.26458333)"
        id="text16894"
        style="font-size:16px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Normal';white-space:pre;shape-inside:url(#rect16896);display:inline" />
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:132.292px;line-height:1.2;font-family:'Agency FB';-inkscape-font-specification:'Agency FB Bold';letter-spacing:0px;writing-mode:lr-tb;direction:ltr;fill:#ff00ff;stroke:#000000;stroke-width:0;stroke-miterlimit:10"
+       x="38.016819"
+       y="233.8923"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1-4"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:132.292px;font-family:'Arial Rounded MT Bold';-inkscape-font-specification:'Arial Rounded MT Bold,  Bold';fill:#ff00ff;stroke-width:0"
+         x="38.016819"
+         y="233.8923">3.2</tspan></text>
   </g>
 </svg>

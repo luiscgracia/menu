@@ -1,0 +1,14 @@
+{
+  "name": "Restaurante - Menú",
+  "short_name": "Menú",
+  "start_url": "./mobile.html",
+  "scope": "./",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "background_color": "#f8f0e6",
+  "theme_color": "#f8f0e6",
+  "icons": [
+    { "src": "imgs/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "imgs/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
