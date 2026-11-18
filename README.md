@@ -12,6 +12,7 @@ La app muestra una portada, una serie de secciones de menú (bebidas, almuerzo/c
 - [Estructura del proyecto](#estructura-del-proyecto)
 - [Cómo agregar o editar secciones](#cómo-agregar-o-editar-secciones)
 - [Cómo se cargan las imágenes (numeración)](#cómo-se-cargan-las-imágenes-numeración)
+- [Publicar imágenes: SVG fuente → WebP](#publicar-imágenes-svg-fuente--webp)
 - [Rendimiento y caché](#rendimiento-y-caché)
 - [Instalación / PWA](#instalación--pwa)
 - [Mantenimiento: qué subir y cuándo](#mantenimiento-qué-subir-y-cuándo)
@@ -46,6 +47,9 @@ menu/
 ├── js/
 │   ├── jquery.fullPage.js
 │   └── ...               (librerías de apoyo)
+├── tools/
+│   ├── exportar-webp.js           Exporta N.M.svg -> N.M.webp (en lote)
+│   └── optimizar-svg.js           (opcional) limpieza de SVG; ver README-optimizacion.md
 ├── fuentes/              Fuentes tipográficas (Arlrdlt, Arlrdbd, etc.)
 └── imgs/
     ├── logocrepes1.*     Logo de la portada
@@ -55,9 +59,12 @@ menu/
     └── mobile/
         ├── header.svg    Cabecera del menú
         ├── footer.svg    Pie del menú
-        ├── 1.1.svg       Sección 1, imagen 1
-        ├── 1.2.svg       Sección 1, imagen 2
-        ├── 2.1.svg       Sección 2, imagen 1
+        ├── 1.1.svg       Sección 1, imagen 1 (fuente editable)
+        ├── 1.1.webp      Sección 1, imagen 1 (publicada, la usa la app)
+        ├── 1.2.svg
+        ├── 1.2.webp
+        ├── 2.1.svg
+        ├── 2.1.webp
         └── ...
 ```
 
@@ -82,7 +89,17 @@ imgs/mobile/7.2.svg
 imgs/mobile/7.3.svg
 ```
 
-> La detección empieza en `N.1.svg`. Si falta `N.1.svg`, la sección `N` no se muestra.
+> La detección empieza en `N.1.svg` (o `N.1.webp`). Si falta `N.1` en ambos formatos, la sección `N` no se muestra.
+
+### 1.b Exportar a WebP
+
+Cuando el contenido esté listo, exporta a WebP con un solo comando (ver [Publicar imágenes](#publicar-imágenes-svg-fuente--webp)):
+
+```bash
+node tools/exportar-webp.js
+```
+
+Esto crea `N.M.webp` junto a cada `N.M.svg`. La app usará el WebP si existe.
 
 ### 2. Poner el nombre de la sección
 
@@ -108,10 +125,11 @@ var NOMBRES = [
 
 ## Cómo se cargan las imágenes (numeración)
 
-- Al abrir la app, `mobile.html` busca `imgs/mobile/1.1.svg`, `2.1.svg`, `3.1.svg`… hasta `MAX_SECCIONES`.
-- Para cada sección detectada, busca `N.1.svg`, `N.2.svg`, `N.3.svg`… hasta encontrar un hueco o llegar a `MAX_SLIDES`.
+- Al abrir la app, `mobile.html` busca `imgs/mobile/1.1`, `2.1`, `3.1`… hasta `MAX_SECCIONES`.
+- Para cada sección detectada, busca `N.1`, `N.2`, `N.3`… hasta encontrar un hueco o llegar a `MAX_SLIDES`.
+- Para cada posición **prefiere el `.webp`** (publicado) y **cae al `.svg`** (fuente) si no existe el WebP.
 - Cada imagen se muestra en una diapositiva con el **header/footer** del menú.
-- Cada imagen `N.M.svg` corresponde siempre a la sección `N` (nunca se reasigna a otra numeración).
+- Cada imagen `N.M` corresponde siempre a la sección `N` (nunca se reasigna a otra numeración).
 
 Límites configurables en `mobile.html`:
 
@@ -120,7 +138,84 @@ var MAX_SLIDES    = 40;   // máximo de imágenes por sección
 var MAX_SECCIONES = Math.max(NOMBRES.length + 5, 8);
 ```
 
-**Proporción recomendada** de las imágenes: **1 : 1.84** (vertical), para que encajen bien en el área de la pantalla.
+**Proporción** de las imágenes: la actual de los SVG es **~1 : 1.44** (vertical). Lo importante es que **todos los SVG usen la misma proporción** entre sí y que se exporten a WebP **sin recortar** (el script mantiene la proporción original de cada archivo). En pantalla la imagen se ajusta con `object-fit: contain`, así que no se deforma.
+
+---
+
+## Publicar imágenes: SVG fuente → WebP
+
+### Estrategia
+
+- Se **diseña y edita en SVG** (`N.M.svg`), porque es lo más cómodo para cambiar texto de platos y precios.
+- Cuando las secciones están **definitivas**, se **exportan a WebP** (`N.M.webp`) con un solo comando. El WebP pesa mucho menos y **mantiene la misma resolución y proporción**.
+- **Los SVG se conservan** en la misma carpeta como fuente editable (para futuros cambios de precio). Publicar el WebP y quedarse el SVG.
+- La app usa el **`.webp` si existe** y, si no, cae al `.svg`. Así nunca se rompe una imagen aunque falte exportar.
+
+> **Cuándo exportar:** cuando el contenido esté aprobado. Mientras se edita/prototipa no hace falta; la app funciona directamente con los `.svg`.
+
+### Por qué WebP y no JPG
+
+En estas imágenes, **WebP con pérdida (lossy) pesa menos que JPG** con calidad equivalente (en pruebas: ~155 KB vs ~265 KB por imagen), **sin perder resolución**. (Exportar WebP *sin* pérdida desde Inkscape puede salir más grande que JPG; por eso el script usa WebP **lossy** a calidad 80.)
+
+El peso real de los SVG está en las **imágenes JPEG embebidas** que llevan dentro, no en el dibujo vectorial: por eso el export a WebP es lo que de verdad reduce el tráfico. Ahorro típico medido: **~74 %** (menú de ~12 MB a ~3 MB).
+
+### Requisitos (instalar una sola vez)
+
+- **Node.js v18 o superior** → [nodejs.org](https://nodejs.org).
+- Las librerías (una sola vez, desde la raíz del proyecto):
+
+```bash
+npm install --no-save @resvg/resvg-js sharp
+```
+
+> `--no-save` evita crear `package.json`; instala en `node_modules/`, que ya está en `.gitignore`.
+> `@resvg/resvg-js` rasteriza los SVG **headless** (no necesita Inkscape ni pantalla) y `sharp` genera el WebP.
+
+### Cómo se ejecuta (IMPORTANTE: desde la raíz del proyecto)
+
+Los comandos se ejecutan **desde la raíz del proyecto** (la carpeta que contiene `tools/` e `imgs/`), **no** dentro de la carpeta de imágenes.
+
+```bash
+# 1) Situarse en la raíz del proyecto
+cd ruta/a/menu
+
+# 2) (Primera vez) instalar las librerías
+npm install --no-save @resvg/resvg-js sharp
+
+# 3) SIMULACRO: muestra el ahorro sin crear archivos
+node tools/exportar-webp.js --dry
+
+# 4) EXPORTAR: crea todos los N.M.webp en imgs/mobile/
+node tools/exportar-webp.js
+```
+
+### Opciones del script
+
+| Comando | Qué hace |
+|---|---|
+| `node tools/exportar-webp.js --dry` | Simula y muestra el ahorro. **No escribe nada.** |
+| `node tools/exportar-webp.js` | Exporta todos los `N.M.svg` de menú a `N.M.webp` (ancho 1080, calidad 80). |
+| `node tools/exportar-webp.js --width 1440` | Otro ancho de salida (la proporción se respeta solo). |
+| `node tools/exportar-webp.js --quality 82` | Otra calidad WebP (por defecto 80). |
+| `node tools/exportar-webp.js --force` | Regenera aunque el WebP exista y no haya cambiado. |
+| `node tools/exportar-webp.js --dir imgs/mobile` | Procesa otra carpeta (por defecto `imgs/mobile`). |
+
+### Qué procesa
+
+- **Solo los SVG de menú** con patrón `N.M.svg` (ej. `1.1.svg`, `2.3.svg`).
+- **Ignora** `header.svg`, `footer.svg`, `deslizar.svg` u otros no numéricos (esos se dejan en SVG).
+- Mantiene la **proporción original** de cada SVG (ancho fijo, alto automático).
+- Si un `.webp` ya está más actualizado que su `.svg`, lo **salta** (usa `--force` para forzar).
+
+### Flujo recomendado (resumen)
+
+1. Crear/editar los `.svg` de menú (`N.M.svg`).
+2. Al aprobar el contenido: `node tools/exportar-webp.js --dry` para ver el ahorro.
+3. `node tools/exportar-webp.js` para generar los `.webp`.
+4. Subir `VERSION` en `sw.js` (ver [Mantenimiento](#mantenimiento-qué-subir-y-cuándo)).
+5. Revisar en el navegador (incógnito o borrando caché) que se vea bien.
+
+> Los `.svg` originales quedan junto a los `.webp` para ediciones futuras (p. ej. cambiar un precio) y volver a exportar.
 
 ---
 
@@ -153,7 +248,7 @@ var CACHE_KEY = 'menu-mobile-v2';          // súbelo al AÑADIR secciones
 var CACHE_TTL = 12 * 60 * 60 * 1000;       // 12 h (red de seguridad)
 
 // sw.js
-var VERSION = 'v2';                        // súbelo al EDITAR archivos existentes
+var VERSION = 'v3';                        // súbelo al EDITAR archivos o re-exportar WebP
 ```
 
 ---
@@ -175,7 +270,8 @@ Para instalar: abrir la página en el móvil → menú del navegador → **"Agre
 | Acción                                          | Qué subir                         |
 |-------------------------------------------------|-----------------------------------|
 | **Añadir secciones nuevas** (`7.1.svg`…)         | `CACHE_KEY` en `mobile.html`      |
-| **Editar un SVG/imagen ya existente**            | `VERSION` en `sw.js`              |
+| **Editar un SVG/imagen ya existente**            | Re-exportar a WebP y `VERSION` en `sw.js` |
+| **Re-exportar a WebP** (ver [Publicar imágenes](#publicar-imágenes-svg-fuente--webp)) | `VERSION` en `sw.js` |
 | **Editar la lógica o los estilos** (HTML/CSS/JS) | `VERSION` en `sw.js`              |
 | Si tienes dudas                                    | Subir ambas a la vez (es seguro)  |
 

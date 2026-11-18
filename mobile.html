@@ -1,4 +1,4 @@
-<!-- proporción imágenes debe ser 1:1.84 en celulares. Para añadir más secciones, basta con crear imgs/mobile/6.1.svg, 7.1.svg, etc. Las secciones se generan automáticamente. -->
+<!-- proporción imágenes debe ser 1:1.84 en celulares. Para añadir más secciones, basta con crear imgs/mobile/6.1.svg, 7.1.svg, etc. (y exportar a .webp). La app usa .webp si existe, si no cae al .svg. Las secciones se generan automáticamente. -->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -202,9 +202,11 @@ var MAX_SECCIONES = Math.max(NOMBRES.length + 5, 8);
      después, aunque no bumpees nada. Si prefieres que nunca caduque
      solo, ponlo en Infinity y comprométete a bumpear CACHE_KEY.
    --------------------------------------------------------------------- */
-var CACHE_KEY = 'menu-mobile-v2';
+var CACHE_KEY = 'menu-mobile-v6';
 var CACHE_TTL = 12 * 60 * 60 * 1000;  // 12 horas
 
+</script>
+<script>
 function getCache() {
 	try {
 		var raw = localStorage.getItem(CACHE_KEY);
@@ -267,9 +269,11 @@ function existe(src) {
 		if (location.protocol.indexOf('http') === 0 && window.fetch) {
 			fetch(src, {method: 'HEAD', cache: 'no-cache'})
 				.then(function(r) {
-					if (!r.ok) return fin(false);
+					if (!r.ok) return fin(false);   // 404/403/etc -> no existe
 					var ct = (r.headers.get('content-type') || '').toLowerCase();
-					if (ct === '' || ct.indexOf('image') === 0 || ct.indexOf('svg') !== -1 || ct.indexOf('xml') !== -1) {
+					// Un 200 con HTML es una página de error, NO una imagen -> no existe
+					if (ct.indexOf('text/html') !== -1) return fin(false);
+					if (ct === '' || ct.indexOf('image') === 0 || ct.indexOf('svg') !== -1 || ct.indexOf('xml') !== -1 || ct.indexOf('webp') !== -1) {
 						fin(true);
 					} else {
 						porImagen();
@@ -282,12 +286,28 @@ function existe(src) {
 	});
 }
 
+/* Devuelve la URL real de una imagen del menú para N.M:
+   prefiere .webp (publicado) y cae a .svg (fuente) si no existe.
+   Devuelve null SOLO si ninguno de los dos existe (para detectar huecos). */
+function resolver(srcBase) {
+	return existe(srcBase + '.webp').then(function(hayWebp) {
+		if (hayWebp) return srcBase + '.webp';
+		return existe(srcBase + '.svg').then(function(haySvg) {
+			return haySvg ? srcBase + '.svg' : null;
+		});
+	});
+}
+
 function detectarSecciones() {
 	var lista = [];
 	for (var i = 1; i <= MAX_SECCIONES; i++) lista.push(i);
 	return pMap(lista, function(sec) {
-		return existe('imgs/mobile/' + sec + '.1.svg').then(function(hay) {
-			return hay ? sec : null;
+		var base = 'imgs/mobile/' + sec + '.1';
+		return existe(base + '.webp').then(function(hay) {
+			if (hay) return sec;
+			return existe(base + '.svg').then(function(hay2) {
+				return hay2 ? sec : null;
+			});
 		});
 	}, 6).then(function(res) {
 		return res.filter(function(s) { return s !== null; });
@@ -302,10 +322,13 @@ function archivosDe(sec) {
 			if (k > MAX_SLIDES) return resolve(lista);
 			var lote = [];
 			for (var j = 0; j < 4 && k + j <= MAX_SLIDES; j++) {
-				lote.push({ n: k + j, src: 'imgs/mobile/' + sec + '.' + (k + j) + '.svg' });
+				lote.push({ n: k + j, base: 'imgs/mobile/' + sec + '.' + (k + j) });
 			}
 			Promise.all(lote.map(function(p) {
-				return existe(p.src).then(function(hay) { return hay ? p : null; });
+				// resolver() devuelve .webp o .svg; null si no existe ninguno
+				return resolver(p.base).then(function(src) {
+					return src ? { n: p.n, src: src } : null;
+				});
 			})).then(function(res) {
 				for (var m = 0; m < res.length; m++) {
 					if (res[m] === null) return resolve(lista);
@@ -327,8 +350,6 @@ function archivosDe(sec) {
    anterior y, si la nueva es "peor", conservamos la anterior.
    --------------------------------------------------------------------- */
 function detectarCompleto() {
-	var previa = getCache();
-
 	return detectarSecciones().then(function(secs) {
 		return pMap(secs, function(sec) {
 			return archivosDe(sec).then(function(slides) {
@@ -336,42 +357,7 @@ function detectarCompleto() {
 			});
 		}, 3);
 	}).then(function(partes) {
-		var nueva = { v: 2, ts: Date.now(), secciones: partes };
-
-		// Sin caché previa: aceptar sin más
-		if (!previa || !previa.secciones || !previa.secciones.length) return nueva;
-
-		// Comparar "riqueza" de la lista: nº de secciones y total de slides
-		var prevSecs = previa.secciones.length;
-		var newSecs  = partes.length;
-		var prevSlides = 0, newSlides = 0;
-		previa.secciones.forEach(function(p) { prevSlides += (p.slides ? p.slides.length : 0); });
-		partes.forEach(function(p) { newSlides += (p.slides ? p.slides.length : 0); });
-
-		// Si la nueva lista tiene menos secciones que la previa,
-		// asumimos fallo de red y NO pisamos la caché.
-		if (newSecs < prevSecs) {
-			previa.ts = Date.now();
-			setCache(previa);
-			return previa;
-		}
-
-		// Mismas secciones pero menos slides en total: posible truncamiento.
-		// Conservamos slide a slide lo que ya teníamos, por si acaso.
-		if (newSecs === prevSecs && newSlides < prevSlides) {
-			var porSec = {};
-			previa.secciones.forEach(function(p) { porSec[p.sec] = p; });
-			partes = partes.map(function(p) {
-				var old = porSec[p.sec];
-				if (old && old.slides && p.slides && p.slides.length < old.slides.length) {
-					return old;
-				}
-				return p;
-			});
-			nueva = { v: 2, ts: Date.now(), secciones: partes };
-		}
-
-		return nueva;
+		return { v: 2, ts: Date.now(), secciones: partes };
 	});
 }
 
@@ -406,7 +392,7 @@ function precacheEnSW(data) {
 	if (!('serviceWorker' in navigator) || !data || !data.secciones) return;
 	var urls = [];
 	data.secciones.forEach(function(p) {
-		urls.push('imgs/mobile/' + p.sec + '.1.svg');
+		if (p.slides && p.slides.length) urls.push(p.slides[0]);
 		p.slides.forEach(function(s) {
 			if (urls.indexOf(s) === -1) urls.push(s);
 		});
@@ -421,10 +407,11 @@ function precacheEnSW(data) {
 function preloadPrimerasSlides(data) {
 	if (!data || !data.secciones) return;
 	data.secciones.forEach(function(p) {
+		if (!p.slides || !p.slides.length) return;
 		var l = document.createElement('link');
 		l.rel = 'preload';
 		l.as = 'image';
-		l.href = 'imgs/mobile/' + p.sec + '.1.svg';
+		l.href = p.slides[0];   // primera imagen (ya resuelta .webp/.svg)
 		document.head.appendChild(l);
 	});
 }
