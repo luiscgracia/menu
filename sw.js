@@ -6,8 +6,8 @@
                     footer, iconos, imágenes de la intro)
      • activate  → limpia caches viejas de versiones anteriores
      • fetch     → según tipo de recurso:
-          - HEAD              → responde desde caché si existe
-                                 (así mobile.html detecta secciones offline)
+          - HEAD              → red primero (importante para detección
+                                 de secciones). Solo usa caché si offline.
           - imgs/**           → cache-first
           - fuentes/**        → cache-first
           - *.html / navigate → network-first (cae a caché si offline)
@@ -16,15 +16,15 @@
    ---------------------------------------------------------------------
    CUÁNDO SUBIR VERSION (sw.js):
      Solo cuando EDITAS el contenido de un archivo ya cacheado
-     (un SVG existente, header.svg, footer.svg, fuentes, iconos).
+     (un SVG existente, header.svg, footer.svg, fuentes, iconos…).
    CUÁNDO SUBIR CACHE_KEY (mobile.html):
      Cuando AÑADES secciones nuevas (7.1.svg, 8.1.svg…).
    Si dudas, subir las dos a la vez es seguro: solo se re-descarga de más.
    ===================================================================== */
 
-var VERSION      = 'v6';
-var SHELL_CACHE  = 'menu-shell-' + VERSION;
-var IMG_CACHE    = 'menu-imgs-'  + VERSION;
+var VERSION     = 'v8';
+var SHELL_CACHE = 'menu-shell-' + VERSION;
+var IMG_CACHE   = 'menu-imgs-'  + VERSION;
 
 var SHELL = [
   './',
@@ -52,17 +52,27 @@ self.addEventListener('install', function (e) {
       return Promise.all(SHELL.map(function (url) {
         return cache.add(url).catch(function () {});
       }));
-    }).then(function () { return self.skipWaiting(); })
+    }).then(function () {
+      return self.skipWaiting();
+    })
   );
 });
 
 self.addEventListener('activate', function (e) {
   e.waitUntil(
     caches.keys().then(function (keys) {
-      return Promise.all(keys.filter(function (k) {
-        return k !== SHELL_CACHE && k !== IMG_CACHE;
-      }).map(function (k) { return caches.delete(k); }));
-    }).then(function () { return self.clients.claim(); })
+      return Promise.all(
+        keys
+          .filter(function (k) {
+            return k !== SHELL_CACHE && k !== IMG_CACHE;
+          })
+          .map(function (k) {
+            return caches.delete(k);
+          })
+      );
+    }).then(function () {
+      return self.clients.claim();
+    })
   );
 });
 
@@ -72,8 +82,8 @@ self.addEventListener('fetch', function (e) {
   var sameOrigin = url.origin === self.location.origin;
 
   /* ---- HEAD: usado por la detección de secciones de mobile.html ----
-     IMPORTANTE: consultar la RED primero para reflejar la realidad (un
-     archivo inexistente debe dar 404, no un 200 fabricado desde caché).
+     IMPORTANTE: consultar la RED primero para reflejar la realidad
+     (un archivo inexistente debe dar 404, no un 200 fabricado desde caché).
      Solo si la red falla (offline) se recurre a la caché. */
   if (req.method === 'HEAD') {
     e.respondWith(
@@ -82,7 +92,9 @@ self.addEventListener('fetch', function (e) {
           if (hit) {
             return new Response('', {
               status: 200,
-              headers: { 'Content-Type': hit.headers.get('Content-Type') || 'image/webp' }
+              headers: {
+                'Content-Type': hit.headers.get('Content-Type') || 'image/webp'
+              }
             });
           }
           return new Response('', { status: 404 });
@@ -94,7 +106,7 @@ self.addEventListener('fetch', function (e) {
 
   if (req.method !== 'GET') return;
 
-  /* ---- Imágenes: cache-first (incluye .webp) ---- */
+  /* ---- Imágenes: cache-first (incluye .webp y .svg) ---- */
   if (sameOrigin && /\/imgs\//.test(url.pathname) &&
       /\.(svg|png|jpe?g|webp|gif)$/i.test(url.pathname)) {
     e.respondWith(cacheFirst(req, IMG_CACHE));
@@ -107,13 +119,13 @@ self.addEventListener('fetch', function (e) {
     return;
   }
 
-  /* ---- HTML: network-first con fallback a caché ---- */
+  /* ---- HTML / navegación: network-first con fallback a caché ---- */
   if (req.mode === 'navigate' || (sameOrigin && /\.html?$/.test(url.pathname))) {
     e.respondWith(networkFirst(req, SHELL_CACHE));
     return;
   }
 
-  /* ---- CSS / JS / otros del shell: stale-while-revalidate ---- */
+  /* ---- CSS / JS / resto del shell: stale-while-revalidate ---- */
   if (sameOrigin) {
     e.respondWith(staleWhileRevalidate(req, SHELL_CACHE));
     return;
@@ -128,12 +140,17 @@ function cacheFirst(req, cacheName) {
   return caches.open(cacheName).then(function (cache) {
     return cache.match(req).then(function (cached) {
       if (cached) return cached;
+
       return fetch(req).then(function (resp) {
-        if (resp && resp.ok) cache.put(req, resp.clone());
+        if (resp && resp.ok) {
+          cache.put(req, resp.clone());
+        }
         return resp;
       }).catch(function () {
-        // Offline y sin caché previa: respuesta de error controlada
-        return new Response('', { status: 503, statusText: 'Offline' });
+        return new Response('', {
+          status: 503,
+          statusText: 'Offline'
+        });
       });
     });
   });
@@ -142,13 +159,21 @@ function cacheFirst(req, cacheName) {
 function networkFirst(req, cacheName) {
   return caches.open(cacheName).then(function (cache) {
     return fetch(req).then(function (resp) {
-      if (resp && resp.ok) cache.put(req, resp.clone());
+      if (resp && resp.ok) {
+        cache.put(req, resp.clone());
+      }
       return resp;
     }).catch(function () {
-      return cache.match(req).then(function (c) {
-        return c || new Response('Offline', {
-          status: 503,
-          headers: { 'Content-Type': 'text/plain' }
+      // Intenta devolver el HTML principal si está en caché
+      return cache.match(req).then(function (cached) {
+        if (cached) return cached;
+
+        // Último recurso: intentar servir mobile.html
+        return cache.match('./mobile.html').then(function (fallback) {
+          return fallback || new Response('Sin conexión', {
+            status: 503,
+            headers: { 'Content-Type': 'text/plain; charset=utf-8' }
+          });
         });
       });
     });
@@ -159,16 +184,21 @@ function staleWhileRevalidate(req, cacheName) {
   return caches.open(cacheName).then(function (cache) {
     return cache.match(req).then(function (cached) {
       var fetchPromise = fetch(req).then(function (resp) {
-        if (resp && resp.ok) cache.put(req, resp.clone());
+        if (resp && resp.ok) {
+          cache.put(req, resp.clone());
+        }
         return resp;
-      }).catch(function () { return cached; });
+      }).catch(function () {
+        return cached;
+      });
+
       return cached || fetchPromise;
     });
   });
 }
 
 /* ------------------------------------------------------------------ */
-/* Mensaje desde mobile.html: precachear todos los SVG detectados      */
+/* Mensaje desde mobile.html: precachear imágenes detectadas           */
 /* ------------------------------------------------------------------ */
 
 self.addEventListener('message', function (e) {
@@ -178,11 +208,18 @@ self.addEventListener('message', function (e) {
   e.waitUntil(
     caches.open(IMG_CACHE).then(function (cache) {
       // Pequeño retardo para no competir con lo que el usuario está mirando
-      return new Promise(function (r) { setTimeout(r, 2500); }).then(function () {
+      return new Promise(function (resolve) {
+        setTimeout(resolve, 2000);
+      }).then(function () {
         var urls = data.urls;
-        var idx = 0, active = 0, done = 0, concurrencia = 4;
+        var idx = 0;
+        var active = 0;
+        var done = 0;
+        var concurrencia = 4;
+
         return new Promise(function (resolve) {
           if (!urls.length) return resolve();
+
           function next() {
             while (active < concurrencia && idx < urls.length) {
               (function (url) {
@@ -190,10 +227,13 @@ self.addEventListener('message', function (e) {
                 cache.match(url).then(function (hit) {
                   if (hit) return;
                   return fetch(url).then(function (resp) {
-                    if (resp && resp.ok) return cache.put(url, resp);
+                    if (resp && resp.ok) {
+                      return cache.put(url, resp);
+                    }
                   }).catch(function () {});
                 }).then(function () {
-                  active--; done++;
+                  active--;
+                  done++;
                   if (done === urls.length) resolve();
                   else next();
                 });

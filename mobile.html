@@ -1,4 +1,4 @@
-<!-- proporción imágenes debe ser 1:1.84 en celulares. Para añadir más secciones, basta con crear imgs/mobile/6.1.svg, 7.1.svg, etc. (y exportar a .webp). La app usa .webp si existe, si no cae al .svg. Las secciones se generan automáticamente. -->
+<!-- proporción imágenes debe ser 1:1.84 en celulares. Para añadir más secciones, basta con crear imgs/mobile/6.1.svg, 7.1.svg, etc. (y exportar a .webp). La app usa .webp si existe, si no cae al .svg. Las secciones se generan automáticamente. La imagen de portada de cada sección se toma de imgs/portadas/N.webp (o N.svg). -->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -144,6 +144,41 @@ img {width:100%; height:auto}
 	transition: opacity .35s ease;
 }
 #cargando.oculto { opacity: 0; pointer-events: none; }
+
+/* =========================================
+   ORIENTACIÓN HORIZONTAL (celular girado)
+   =========================================
+   En un navegador normal (pestaña) no se puede bloquear la rotación
+   de forma fiable. En su lugar, cuando el dispositivo está en
+   horizontal "emulamos" el formato vertical: el menú se muestra como
+   una columna centrada con proporción de móvil, y los laterales
+   quedan con fondo del tema. Así se ve siempre igual que en vertical.
+   (En la PWA instalada esto no se usa: el manifest fuerza portrait.) */
+@media (orientation: landscape) and (max-height: 600px) {
+
+	/* Fondo del tema a los lados de la "columna" */
+	html, body { background: #4f3528; }
+
+	/* La columna del menú ocupa el alto de la pantalla y conserva
+	   proporción vertical; se centra horizontalmente. */
+	#fullpage {
+		position: relative;
+		width: calc(100svh * 0.54);   /* ~proporción 1080:1987 ≈ 0.54 */
+		max-width: 100%;
+		height: 100svh;
+		margin: 0 auto;
+		box-shadow: 0 0 24px rgba(0,0,0,0.45);
+	}
+
+	/* Overlay de carga también centrado con la columna */
+	#cargando { padding-left: calc((100vw - (100svh * 0.54)) / 2); }
+
+	/* Puntos de navegación pegados al borde derecho de la columna,
+	   no al de toda la pantalla */
+	#fp-nav {
+		right: calc((100vw - (100svh * 0.54)) / 2) !important;
+	}
+}
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="js/jquery.fullPage.js"></script>
@@ -179,21 +214,25 @@ function iniciarMenu(totalSecciones) {
    Si existe N.1.svg pero N no está en la lista, se usa "SECCIÓN N".
    ===================================================================== */
 var NOMBRES = [
-	'BEBIDAS',            // 1.x.svg
-	'ALMUERZO / CENA',    // 2.x.svg
-	'DESAYUNO / BRUNCH',  // 3.x.svg
-	'HELADOS / POSTRES',  // 4.x.svg
-	'OTROS',              // 5.x.svg
-	'PRUEBA'              // 6.x.svg
+	'BEBIDAS',            //  1.x.svg
+	'ALMUERZO / CENA',    //  2.x.svg
+	'DESAYUNO / BRUNCH',  //  3.x.svg
+	'HELADOS / POSTRES',  //  4.x.svg
+	'OTROS',              //  5.x.svg
+	'SECCIÓN 6',          //  6.x.svg
+	'SECCIÓN 7',          //  7.x.svg
+	'SECCIÓN 8',          //  8.x.svg
+	'SECCIÓN 9',          //  9.x.svg
+	'SECCIÓN 10'          // 10.x.svg
 ];
 
 var MAX_SLIDES    = 40;
-var MAX_SECCIONES = Math.max(NOMBRES.length + 5, 8);
+var MAX_SECCIONES = NOMBRES.length;
 
 /* ---------------------------------------------------------------------
    CACHÉ PERSISTENTE (localStorage)
    ---------------------------------------------------------------------
-   • Al AÑADIR SECCIONES nuevas (7.x.svg…) sube CACHE_KEY (v3, v4…).
+   • Al AÑADIR SECCIONES nuevas (7.x.svg…) sube CACHE_KEY (v7, v8…).
      No hace falta tocar sw.js.
    • Al EDITAR un archivo ya existente (2.3.svg, header.svg, fuentes…)
      sube VERSION en sw.js. No hace falta tocar CACHE_KEY.
@@ -202,8 +241,12 @@ var MAX_SECCIONES = Math.max(NOMBRES.length + 5, 8);
      después, aunque no bumpees nada. Si prefieres que nunca caduque
      solo, ponlo en Infinity y comprométete a bumpear CACHE_KEY.
    --------------------------------------------------------------------- */
-var CACHE_KEY = 'menu-mobile-v6';
+var CACHE_KEY = 'menu-mobile-v8';   // v8: se añadió portada por sección
 var CACHE_TTL = 12 * 60 * 60 * 1000;  // 12 horas
+
+/* Imagen de portada por defecto si una sección no tiene la suya
+   (imgs/portadas/N.webp → imgs/portadas/N.svg). */
+var PORTADA_DEFAULT = 'imgs/bebidas.jpg';
 
 </script>
 <script>
@@ -224,6 +267,28 @@ function setCache(data) {
 		data.ts = Date.now();
 		localStorage.setItem(CACHE_KEY, JSON.stringify(data));
 	} catch (e) {}
+}
+
+/* --- Compara si la nueva detección es mejor o igual que la anterior ---
+   Evita que una detección a medias (red intermitente) pise una caché buena. */
+function isBetter(newData, oldData) {
+	if (!oldData || !Array.isArray(oldData.secciones)) return true;
+	if (!newData || !Array.isArray(newData.secciones)) return false;
+
+	// Menos secciones → peor
+	if (newData.secciones.length < oldData.secciones.length) return false;
+
+	// Misma cantidad de secciones: comparamos total de slides
+	var totalNew = 0;
+	var totalOld = 0;
+	for (var i = 0; i < newData.secciones.length; i++) {
+		totalNew += (newData.secciones[i].slides && newData.secciones[i].slides.length) || 0;
+	}
+	for (var j = 0; j < oldData.secciones.length; j++) {
+		totalOld += (oldData.secciones[j].slides && oldData.secciones[j].slides.length) || 0;
+	}
+
+	return totalNew >= totalOld;
 }
 
 /* --- Concurrencia controlada --- */
@@ -258,16 +323,17 @@ function existe(src) {
 		var terminado = false;
 		function fin(v) { if (!terminado) { terminado = true; clearTimeout(t); ok(v); } }
 		// Evita que una petición colgada bloquee la detección completa
-		var t = setTimeout(function() { fin(false); }, 4000);
+		var t = setTimeout(function() { fin(false); }, 3500);
 
 		function porImagen() {
 			var i = new Image();
 			i.onload  = function() { fin(true);  };
 			i.onerror = function() { fin(false); };
-			i.src = src;
+			i.src = src + (src.indexOf('?') === -1 ? ('?t=' + Date.now()) : '');
 		}
+
 		if (location.protocol.indexOf('http') === 0 && window.fetch) {
-			fetch(src, {method: 'HEAD', cache: 'no-cache'})
+			fetch(src, { method: 'HEAD', cache: 'no-cache' })
 				.then(function(r) {
 					if (!r.ok) return fin(false);   // 404/403/etc -> no existe
 					var ct = (r.headers.get('content-type') || '').toLowerCase();
@@ -352,8 +418,11 @@ function archivosDe(sec) {
 function detectarCompleto() {
 	return detectarSecciones().then(function(secs) {
 		return pMap(secs, function(sec) {
-			return archivosDe(sec).then(function(slides) {
-				return { sec: sec, slides: slides };
+			// Portada: imgs/portadas/N (.webp → .svg); null si no existe
+			return resolver('imgs/portadas/' + sec).then(function(portada) {
+				return archivosDe(sec).then(function(slides) {
+					return { sec: sec, portada: portada, slides: slides };
+				});
 			});
 		}, 3);
 	}).then(function(partes) {
@@ -366,11 +435,15 @@ function detectarMenu() {
 	var cached = getCache();
 
 	if (cached) {
-		// Refresco silencioso en segundo plano
+		// Refresco silencioso en segundo plano (con guard anti-truncado)
 		if (navigator.onLine !== false) {
 			setTimeout(function() {
-				detectarCompleto().then(setCache).catch(function() {});
-			}, 500);
+				detectarCompleto().then(function(newData) {
+					if (isBetter(newData, cached)) {
+						setCache(newData);
+					}
+				}).catch(function() {});
+			}, 600);
 		}
 		return Promise.resolve(cached);
 	}
@@ -392,6 +465,7 @@ function precacheEnSW(data) {
 	if (!('serviceWorker' in navigator) || !data || !data.secciones) return;
 	var urls = [];
 	data.secciones.forEach(function(p) {
+		if (p.portada && urls.indexOf(p.portada) === -1) urls.push(p.portada);
 		if (p.slides && p.slides.length) urls.push(p.slides[0]);
 		p.slides.forEach(function(s) {
 			if (urls.indexOf(s) === -1) urls.push(s);
@@ -428,10 +502,10 @@ function slideHtml(src, esPrimero) {
 		+ '</div></div>';
 }
 
-function portadaHtml(sec) {
+function portadaHtml(sec, portadaSrc) {
 	var nombre = (NOMBRES[sec - 1] !== undefined) ? NOMBRES[sec - 1] : ('SECCIÓN ' + sec);
-	// Igual que el original: slide con imagen de portada + <h2>
-	return '<div class="slide" id="fotos"><img src="imgs/bebidas.jpg" alt=""><h2>' + nombre + '</h2></div>';
+	var img = portadaSrc ? portadaSrc : PORTADA_DEFAULT;
+	return '<div class="slide" id="fotos"><img src="' + img + '" alt=""><h2>' + nombre + '</h2></div>';
 }
 
 function ocultarCargando() {
@@ -448,13 +522,27 @@ $(document).ready(function() {
 		navigator.serviceWorker.register('sw.js').catch(function() {});
 	}
 
+	// Al girar el dispositivo, recalcular el layout de fullPage
+	// (necesario tras el cambio de dimensiones del contenedor #fullpage).
+	var _rebuildTimer = null;
+	function reajustarFullPage() {
+		clearTimeout(_rebuildTimer);
+		_rebuildTimer = setTimeout(function() {
+			try {
+				if ($.fn.fullpage && $.fn.fullpage.reBuild) $.fn.fullpage.reBuild();
+			} catch (e) {}
+		}, 250);
+	}
+	window.addEventListener('orientationchange', reajustarFullPage);
+	window.addEventListener('resize', reajustarFullPage);
+
 	detectarMenu().then(function(data) {
 		var contacto = $('#fullpage .section').last();
 
 		data.secciones.forEach(function(parte) {
 			var sec = parte.sec;
 			var sec$ = $('<div class="section contenido-extra" id="section' + sec + '">'
-				+ portadaHtml(sec) + '</div>');
+				+ portadaHtml(sec, parte.portada) + '</div>');
 			var slides = '';
 			parte.slides.forEach(function(src, i) {
 				slides += slideHtml(src, i === 0);
@@ -468,7 +556,7 @@ $(document).ready(function() {
 		iniciarMenu($('#fullpage .section').length);
 		setTimeout(ocultarCargando, 60);
 
-		// Precachear todos los SVG detectados en el service worker
+		// Precachear todos los SVG/WebP detectados en el service worker
 		precacheEnSW(data);
 	}).catch(function() {
 		iniciarMenu($('#fullpage .section').length);
